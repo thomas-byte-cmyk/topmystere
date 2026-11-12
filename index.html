@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>TopMystère — le classement mystère du jour</title>
+  <meta name="description" content="Chaque jour, un classement pop culture à deviner. 3 vies, des indices, et ton score à partager." />
+  <meta name="theme-color" content="#0c0e14" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Aperçu lors du partage du lien (réseaux sociaux / messageries) -->
+  <meta property="og:title" content="TopMystère" />
+  <meta property="og:description" content="Le classement mystère du jour : sauras-tu le compléter ?" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>" />
+
+  <!-- Polices (si pas de réseau, le jeu retombe sur les polices système) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ========== EN-TÊTE ========== -->
+  <header class="topbar">
+    <button id="btn-help" class="icon-btn" type="button" aria-label="Règles du jeu" title="Règles">?</button>
+    <h1 class="logo">Top<span>Mystère</span></h1>
+    <button id="btn-stats" class="icon-btn" type="button" aria-label="Statistiques" title="Statistiques">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M12 20V4M19 20v-6" /></svg>
+    </button>
+  </header>
+
+  <!-- ========== ZONE DE JEU ========== -->
+  <main id="app" class="app" aria-busy="true">
+    <!-- Bandeau affiché uniquement en mode archives -->
+    <div id="archive-banner" class="archive-banner" hidden>
+      <span>🗂 Mode archives — ne compte pas dans tes stats</span>
+      <div class="archive-banner-actions">
+        <button id="btn-restart" type="button" class="chip-btn">↺ Recommencer</button>
+        <button id="btn-back-daily" type="button" class="chip-btn">Défi du jour</button>
+      </div>
+    </div>
+
+    <!-- Message d'erreur (ex : fichier ouvert sans serveur local) -->
+    <div id="load-error" class="load-error" hidden></div>
+
+    <section class="puzzle-head" aria-live="polite">
+      <div class="puzzle-meta">
+        <span id="puzzle-badge" class="badge">…</span>
+        <span id="puzzle-number" class="puzzle-number"></span>
+      </div>
+      <h2 id="puzzle-title" class="puzzle-title">Chargement du classement…</h2>
+      <p id="puzzle-source" class="puzzle-source"></p>
+    </section>
+
+    <div class="status-bar">
+      <div id="lives" class="lives" aria-label="Vies restantes"></div>
+      <div id="progress" class="progress-text"></div>
+    </div>
+
+    <!-- Les lignes du classement sont générées par app.js -->
+    <ol id="board" class="board"></ol>
+  </main>
+
+  <!-- ========== COMMANDES (collées en bas de l'écran) ========== -->
+  <footer class="controls">
+    <!-- Liste des mauvaises réponses déjà proposées (toujours visible au-dessus du champ) -->
+    <div id="wrong-list" class="wrong-list" aria-label="Mauvaises réponses"></div>
+
+    <form id="guess-form" class="guess-form" autocomplete="off">
+      <label for="guess-input" class="sr-only">Ta proposition</label>
+      <input id="guess-input" class="guess-input" type="text" placeholder="Propose une réponse…"
+             autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send" maxlength="80" />
+      <button id="btn-submit" class="btn btn-primary" type="submit">Valider</button>
+    </form>
+
+    <div class="controls-row">
+      <button id="btn-hint" class="btn btn-ghost" type="button">💡 Indice <small>(−1 ❤️)</small></button>
+      <button id="btn-results" class="btn btn-primary" type="button" hidden>Voir mon résultat</button>
+    </div>
+
+    <button id="btn-archive" class="archive-link" type="button">🗂 Archives</button>
+  </footer>
+
+  <!-- Notifications courtes -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- ========== MODALE : FIN DE PARTIE ========== -->
+  <dialog id="modal-end" class="modal">
+    <button class="modal-close" type="button" data-close aria-label="Fermer">✕</button>
+    <div class="modal-body">
+      <p id="end-emoji" class="end-emoji">🏆</p>
+      <h3 id="end-title" class="modal-title">Bravo !</h3>
+      <p id="end-subtitle" class="end-subtitle"></p>
+      <p id="end-grid" class="end-grid" aria-label="Résumé de la partie"></p>
+
+      <div id="end-stats" class="stats-grid"></div>
+
+      <button id="btn-share" class="btn btn-primary btn-wide" type="button">📋 Partager mon score</button>
+
+      <h4 class="section-title">Le classement complet</h4>
+      <ol id="end-ranking" class="end-ranking"></ol>
+
+      <p id="end-next" class="end-next"></p>
+    </div>
+  </dialog>
+
+  <!-- ========== MODALE : RÈGLES ========== -->
+  <dialog id="modal-help" class="modal">
+    <button class="modal-close" type="button" data-close aria-label="Fermer">✕</button>
+    <div class="modal-body">
+      <h3 class="modal-title">Comment jouer ?</h3>
+      <ul class="rules">
+        <li>🔒 Chaque jour, un <strong>classement mystère</strong> (Top 3, Top 5 ou Top 10) sur la pop culture.</li>
+        <li>⌨️ Propose des réponses : si elle fait partie du classement, sa ligne se retourne avec son rang et sa valeur.</li>
+        <li>❤️ Tu as <strong>3 vies</strong>. Chaque mauvaise réponse en coûte une.</li>
+        <li>💡 Le bouton <strong>Indice</strong> révèle la 1<sup>re</sup> lettre et un indice d'une réponse manquante… contre 1 vie.</li>
+        <li>✍️ Pas besoin d'accents ni de majuscules, et les petites fautes de frappe sont tolérées.</li>
+        <li>📤 À la fin, partage ton score (sans spoiler) avec tes amis !</li>
+      </ul>
+      <p class="rules-example">Exemple de partage : <span>🟩🟥🟩💡🟩</span></p>
+      <button class="btn btn-primary btn-wide" type="button" data-close>C'est parti !</button>
+    </div>
+  </dialog>
+
+  <!-- ========== MODALE : STATISTIQUES ========== -->
+  <dialog id="modal-stats" class="modal">
+    <button class="modal-close" type="button" data-close aria-label="Fermer">✕</button>
+    <div class="modal-body">
+      <h3 class="modal-title">Statistiques</h3>
+      <div id="stats-grid" class="stats-grid"></div>
+      <h4 class="section-title">Dernières parties</h4>
+      <ul id="history-list" class="history-list"></ul>
+    </div>
+  </dialog>
+
+  <!-- ========== MODALE : ARCHIVES ========== -->
+  <dialog id="modal-archive" class="modal">
+    <button class="modal-close" type="button" data-close aria-label="Fermer">✕</button>
+    <div class="modal-body">
+      <h3 class="modal-title">Archives</h3>
+      <p class="modal-hint">Rejoue n'importe quel classement. Ces parties ne comptent pas dans ta série.</p>
+      <ul id="archive-list" class="archive-list"></ul>
+    </div>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "puzzles": [
+    {
+      "id": "jv-ventes-top5",
+      "category": "Jeux vidéo",
+      "emoji": "🎮",
+      "title": "Les 5 jeux vidéo les plus vendus de l'histoire",
+      "source": "Wikipédia / chiffres éditeurs (2025)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Minecraft",
+          "aliases": ["mine craft"],
+          "value": "350 millions+",
+          "hint": "Des blocs, des creepers et une pioche."
+        },
+        {
+          "rank": 2,
+          "answer": "Grand Theft Auto V",
+          "aliases": ["GTA 5", "GTA V", "GTA", "Grand Theft Auto 5", "GTA Five"],
+          "value": "215 millions+",
+          "hint": "Los Santos, trois braqueurs, et un succès qui dure depuis 2013."
+        },
+        {
+          "rank": 3,
+          "answer": "Tetris (EA)",
+          "aliases": ["Tetris", "Tetris EA", "Tetris mobile"],
+          "value": "100 millions",
+          "hint": "Des pièces qui tombent… dans sa version mobile signée EA."
+        },
+        {
+          "rank": 4,
+          "answer": "Wii Sports",
+          "aliases": ["Wii Sport", "Wiisports"],
+          "value": "82,9 millions",
+          "hint": "Livré avec une console de 2006 : bowling et tennis en agitant le bras."
+        },
+        {
+          "rank": 5,
+          "answer": "Red Dead Redemption 2",
+          "aliases": ["RDR2", "RDR 2", "Red Dead 2", "Red Dead Redemption II", "Red Dead"],
+          "value": "79 millions",
+          "hint": "Arthur Morgan et la bande de Dutch, au Far West."
+        }
+      ]
+    },
+    {
+      "id": "netflix-series-top3",
+      "category": "Séries Netflix",
+      "emoji": "📺",
+      "title": "Les 3 séries anglophones les plus vues de l'histoire de Netflix",
+      "source": "Netflix « Most Popular » – vues sur 91 jours (2025)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Mercredi (saison 1)",
+          "aliases": ["Mercredi", "Wednesday", "Wednesday Addams", "Mercredi saison 1", "Wednesday saison 1"],
+          "value": "252,1 M de vues",
+          "hint": "Une Addams en internat, et une danse devenue virale."
+        },
+        {
+          "rank": 2,
+          "answer": "Adolescence",
+          "aliases": ["Adolescence mini serie"],
+          "value": "≈ 141 M de vues",
+          "hint": "Mini-série britannique (2025) tournée entièrement en plans-séquences."
+        },
+        {
+          "rank": 3,
+          "answer": "Stranger Things (saison 4)",
+          "aliases": ["Stranger Things", "Stranger Things 4", "Stranger Things saison 4", "ST4"],
+          "value": "140,7 M de vues",
+          "hint": "Hawkins, Vecna et « Running Up That Hill »."
+        }
+      ]
+    },
+    {
+      "id": "booba-albums-top5",
+      "category": "Rap français",
+      "emoji": "🎤",
+      "title": "Les 5 premiers albums solo de Booba, dans l'ordre de sortie",
+      "source": "Discographie officielle",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Temps mort",
+          "aliases": ["Tempsmort"],
+          "value": "2002",
+          "hint": "Son tout premier album solo, juste après l'aventure Lunatic."
+        },
+        {
+          "rank": 2,
+          "answer": "Panthéon",
+          "aliases": ["Pantheon"],
+          "value": "2004",
+          "hint": "Le nom d'un monument parisien où reposent les grands hommes."
+        },
+        {
+          "rank": 3,
+          "answer": "Ouest Side",
+          "aliases": ["West Side", "Ouestside"],
+          "value": "2006",
+          "hint": "Un point cardinal… à la sauce Boulogne."
+        },
+        {
+          "rank": 4,
+          "answer": "0.9",
+          "aliases": ["09", "0,9", "Zero neuf", "Zero virgule neuf", "Zero point neuf"],
+          "value": "2008",
+          "hint": "Son titre ressemble à un nombre décimal."
+        },
+        {
+          "rank": 5,
+          "answer": "Lunatic",
+          "aliases": ["Lunatic album"],
+          "value": "2010",
+          "hint": "Il porte le nom de son ancien duo avec Ali."
+        }
+      ]
+    },
+    {
+      "id": "cinema-boxoffice-top10",
+      "category": "Cinéma",
+      "emoji": "🎬",
+      "title": "Les 10 films les plus rentables de l'histoire au box-office mondial",
+      "source": "Box Office Mojo – recettes mondiales non ajustées (mi-2025)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Avatar",
+          "aliases": ["Avatar 1"],
+          "value": "2,92 Md$",
+          "hint": "James Cameron, les Na'vi et la planète Pandora (2009)."
+        },
+        {
+          "rank": 2,
+          "answer": "Avengers: Endgame",
+          "aliases": ["Endgame", "Avengers 4", "Avengers Endgame"],
+          "value": "2,80 Md$",
+          "hint": "« Je suis inévitable. » (2019)"
+        },
+        {
+          "rank": 3,
+          "answer": "Avatar : La Voie de l'eau",
+          "aliases": ["Avatar 2", "Avatar la voie de l'eau", "Avatar The Way of Water", "The Way of Water", "La Voie de l'eau"],
+          "value": "2,32 Md$",
+          "hint": "Retour sur Pandora, cette fois sous l'océan (2022)."
+        },
+        {
+          "rank": 4,
+          "answer": "Titanic",
+          "aliases": ["Titanic 1997"],
+          "value": "2,26 Md$",
+          "hint": "« Je suis le roi du monde ! » (1997)"
+        },
+        {
+          "rank": 5,
+          "answer": "Ne Zha 2",
+          "aliases": ["Nezha 2", "Ne Zha"],
+          "value": "≈ 2,2 Md$",
+          "hint": "Film d'animation chinois, phénomène mondial de 2025."
+        },
+        {
+          "rank": 6,
+          "answer": "Star Wars : Le Réveil de la Force",
+          "aliases": ["Le Réveil de la Force", "The Force Awakens", "Star Wars 7", "Star Wars VII", "Star Wars épisode 7", "Star Wars épisode VII", "Star Wars The Force Awakens"],
+          "value": "2,07 Md$",
+          "hint": "Rey, Finn et le grand retour du Faucon Millenium (2015)."
+        },
+        {
+          "rank": 7,
+          "answer": "Avengers: Infinity War",
+          "aliases": ["Infinity War", "Avengers 3", "Avengers Infinity War"],
+          "value": "2,05 Md$",
+          "hint": "Thanos claque des doigts (2018)."
+        },
+        {
+          "rank": 8,
+          "answer": "Spider-Man: No Way Home",
+          "aliases": ["No Way Home", "Spider-Man No Way Home", "Spiderman 3 Tom Holland"],
+          "value": "1,92 Md$",
+          "hint": "Trois Spider-Man pour le prix d'un (2021)."
+        },
+        {
+          "rank": 9,
+          "answer": "Vice-Versa 2",
+          "aliases": ["Vice Versa 2", "Inside Out 2"],
+          "value": "1,70 Md$",
+          "hint": "Anxiété débarque dans la tête de Riley (Pixar, 2024)."
+        },
+        {
+          "rank": 10,
+          "answer": "Jurassic World",
+          "aliases": ["Jurassic World 1"],
+          "value": "1,67 Md$",
+          "hint": "Le parc rouvre enfin… très mauvaise idée (2015)."
+        }
+      ]
+    },
+    {
+      "id": "youtube-vues-top3",
+      "category": "Internet",
+      "emoji": "▶️",
+      "title": "Les 3 vidéos les plus vues de l'histoire de YouTube",
+      "source": "YouTube (2025)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Baby Shark Dance",
+          "aliases": ["Baby Shark", "Baby Shark Pinkfong", "Pinkfong Baby Shark"],
+          "value": "≈ 16 Md de vues",
+          "hint": "Doo doo doo doo doo doo…"
+        },
+        {
+          "rank": 2,
+          "answer": "Despacito",
+          "aliases": ["Despacito Luis Fonsi", "Luis Fonsi Despacito"],
+          "value": "≈ 8,8 Md de vues",
+          "hint": "Luis Fonsi feat. Daddy Yankee (2017)."
+        },
+        {
+          "rank": 3,
+          "answer": "Wheels on the Bus (CoComelon)",
+          "aliases": ["Wheels on the Bus", "The Wheels on the Bus", "Les roues de l'autobus", "Cocomelon Wheels on the Bus"],
+          "value": "≈ 7,5 Md de vues",
+          "hint": "Une comptine CoComelon… à bord d'un véhicule jaune."
+        }
+      ]
+    },
+    {
+      "id": "instagram-comptes-top3",
+      "category": "Internet",
+      "emoji": "📸",
+      "title": "Les 3 comptes Instagram les plus suivis au monde",
+      "source": "Instagram (2025)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Instagram",
+          "aliases": ["@instagram", "Compte Instagram", "Instagram officiel"],
+          "value": "≈ 690 M d'abonnés",
+          "hint": "Le compte officiel… de l'appli elle-même."
+        },
+        {
+          "rank": 2,
+          "answer": "Cristiano Ronaldo",
+          "aliases": ["Ronaldo", "CR7", "Cristiano", "@cristiano"],
+          "value": "≈ 660 M d'abonnés",
+          "hint": "Siuuuu !"
+        },
+        {
+          "rank": 3,
+          "answer": "Lionel Messi",
+          "aliases": ["Messi", "Leo Messi", "@leomessi"],
+          "value": "≈ 510 M d'abonnés",
+          "hint": "Le n°10 argentin aux 8 Ballons d'or."
+        }
+      ]
+    },
+    {
+      "id": "mcu-boxoffice-top10",
+      "category": "Cinéma",
+      "emoji": "🦸",
+      "title": "Les 10 films Marvel (MCU) les plus rentables au box-office mondial",
+      "source": "Box Office Mojo (2025)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Avengers: Endgame",
+          "aliases": ["Endgame", "Avengers 4", "Avengers Endgame"],
+          "value": "2,80 Md$",
+          "hint": "La conclusion de la saga de l'Infini (2019)."
+        },
+        {
+          "rank": 2,
+          "answer": "Avengers: Infinity War",
+          "aliases": ["Infinity War", "Avengers 3", "Avengers Infinity War"],
+          "value": "2,05 Md$",
+          "hint": "Thanos rassemble les six Pierres (2018)."
+        },
+        {
+          "rank": 3,
+          "answer": "Spider-Man: No Way Home",
+          "aliases": ["No Way Home", "Spider-Man No Way Home"],
+          "value": "1,92 Md$",
+          "hint": "Le multivers s'ouvre et Doctor Strange s'en mêle (2021)."
+        },
+        {
+          "rank": 4,
+          "answer": "Avengers",
+          "aliases": ["The Avengers", "Avengers 1", "Avengers 2012"],
+          "value": "1,52 Md$",
+          "hint": "La première réunion de l'équipe, bataille de New York (2012)."
+        },
+        {
+          "rank": 5,
+          "answer": "Avengers : L'Ère d'Ultron",
+          "aliases": ["L'Ère d'Ultron", "Age of Ultron", "Avengers Age of Ultron", "Avengers 2"],
+          "value": "1,40 Md$",
+          "hint": "Une IA créée par Tony Stark tourne mal (2015)."
+        },
+        {
+          "rank": 6,
+          "answer": "Black Panther",
+          "aliases": ["Black Panther 1"],
+          "value": "1,35 Md$",
+          "hint": "Wakanda forever ! (2018)"
+        },
+        {
+          "rank": 7,
+          "answer": "Deadpool & Wolverine",
+          "aliases": ["Deadpool et Wolverine", "Deadpool and Wolverine", "Deadpool Wolverine", "Deadpool 3"],
+          "value": "1,34 Md$",
+          "hint": "Un mercenaire bavard et un mutant griffu (2024)."
+        },
+        {
+          "rank": 8,
+          "answer": "Iron Man 3",
+          "aliases": ["Ironman 3", "Iron Man III"],
+          "value": "1,21 Md$",
+          "hint": "Tony Stark face au Mandarin (2013)."
+        },
+        {
+          "rank": 9,
+          "answer": "Captain America: Civil War",
+          "aliases": ["Civil War", "Captain America 3", "Captain America Civil War"],
+          "value": "1,15 Md$",
+          "hint": "Team Cap contre Team Iron Man (2016)."
+        },
+        {
+          "rank": 10,
+          "answer": "Spider-Man: Far From Home",
+          "aliases": ["Far From Home", "Spider-Man Far From Home"],
+          "value": "1,13 Md$",
+          "hint": "Peter Parker en voyage scolaire en Europe (2019)."
+        }
+      ]
+    }
+  ]
+}
