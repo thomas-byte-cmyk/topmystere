@@ -169,6 +169,69 @@
       ]
     },
     {
+      "id": "ballon-or-record-top5",
+      "category": "Sport",
+      "emoji": "⚽",
+      "title": "Les 5 joueurs qui ont remporté le plus de Ballons d'or",
+      "source": "France Football (à fin 2025) – égalités classées par ordre alphabétique",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Lionel Messi",
+          "aliases": [
+            "Messi",
+            "Leo Messi",
+            "Lionel"
+          ],
+          "value": "8 Ballons d'or",
+          "hint": "Le n°10 argentin, champion du monde 2022."
+        },
+        {
+          "rank": 2,
+          "answer": "Cristiano Ronaldo",
+          "aliases": [
+            "Ronaldo",
+            "CR7",
+            "Cristiano"
+          ],
+          "value": "5 Ballons d'or",
+          "hint": "Le Portugais du « Siuuu »."
+        },
+        {
+          "rank": 3,
+          "answer": "Johan Cruyff",
+          "aliases": [
+            "Cruyff",
+            "Cruijff",
+            "Johan Cruijff", "Cruif", "Cruyf"
+          ],
+          "value": "3 (ex æquo)",
+          "hint": "Légende néerlandaise de l'Ajax et du Barça, années 70."
+        },
+        {
+          "rank": 4,
+          "answer": "Michel Platini",
+          "aliases": [
+            "Platini",
+            "Michel"
+          ],
+          "value": "3 (ex æquo)",
+          "hint": "Le Français de la Juventus, sacré 3 fois d'affilée (1983-85)."
+        },
+        {
+          "rank": 5,
+          "answer": "Marco van Basten",
+          "aliases": [
+            "Van Basten",
+            "Basten",
+            "Marco"
+          ],
+          "value": "3 (ex æquo)",
+          "hint": "Buteur néerlandais du grand Milan AC (1988-1992)."
+        }
+      ]
+    },
+    {
       "id": "cinema-boxoffice-top10",
       "category": "Cinéma",
       "emoji": "🎬",
@@ -286,6 +349,73 @@
       ]
     },
     {
+      "id": "cinema-entrees-2025-top5",
+      "category": "Cinéma",
+      "emoji": "🍿",
+      "title": "Les 5 films qui ont fait le plus d'entrées en France en 2025",
+      "source": "CNC – entrées de l'année 2025 (au 29 décembre)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Zootopie 2",
+          "aliases": [
+            "Zootopia 2",
+            "Zootopie"
+          ],
+          "value": "≈ 6,2 M d'entrées",
+          "hint": "Judy Hopps et Nick Wilde reprennent l'enquête (Disney, novembre)."
+        },
+        {
+          "rank": 2,
+          "answer": "Lilo & Stitch",
+          "aliases": [
+            "Lilo et Stitch",
+            "Lilo and Stitch",
+            "Stitch",
+            "Lilo"
+          ],
+          "value": "≈ 5,2 M d'entrées",
+          "hint": "Le remake en prises de vues réelles d'un Disney avec un alien bleu."
+        },
+        {
+          "rank": 3,
+          "answer": "Avatar : De feu et de cendres",
+          "aliases": [
+            "Avatar 3",
+            "Avatar",
+            "Avatar de feu et de cendres",
+            "Fire and Ash",
+            "Avatar Fire and Ash"
+          ],
+          "value": "≈ 4,6 M d'entrées",
+          "hint": "Retour sur Pandora… sorti seulement le 17 décembre."
+        },
+        {
+          "rank": 4,
+          "answer": "F1",
+          "aliases": [
+            "F1 le film",
+            "F1 The Movie",
+            "Formule 1",
+            "Le film F1"
+          ],
+          "value": "≈ 3,3 M d'entrées",
+          "hint": "Brad Pitt en pilote de course vieillissant."
+        },
+        {
+          "rank": 5,
+          "answer": "Jurassic World : Renaissance",
+          "aliases": [
+            "Jurassic World Renaissance",
+            "Jurassic World Rebirth",
+            "Jurassic World"
+          ],
+          "value": "≈ 3,0 M d'entrées",
+          "hint": "Scarlett Johansson face aux dinosaures."
+        }
+      ]
+    },
+    {
       "id": "youtube-vues-top3",
       "category": "Internet",
       "emoji": "▶️",
@@ -324,6 +454,68 @@
           ],
           "value": "≈ 7,5 Md de vues",
           "hint": "Une comptine CoComelon… à bord d'un véhicule jaune."
+        }
+      ]
+    },
+    {
+      "id": "grand-chelem-hommes-top5",
+      "category": "Sport",
+      "emoji": "🎾",
+      "title": "Les 5 joueurs de tennis avec le plus de titres du Grand Chelem en simple",
+      "source": "ATP (début 2026)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Novak Djokovic",
+          "aliases": [
+            "Djokovic",
+            "Novak",
+            "Djoko",
+            "Nole"
+          ],
+          "value": "24 titres",
+          "hint": "Le Serbe recordman, imbattable à l'Open d'Australie."
+        },
+        {
+          "rank": 2,
+          "answer": "Rafael Nadal",
+          "aliases": [
+            "Nadal",
+            "Rafa",
+            "Rafael"
+          ],
+          "value": "22 titres",
+          "hint": "Le roi de la terre battue : 14 Roland-Garros."
+        },
+        {
+          "rank": 3,
+          "answer": "Roger Federer",
+          "aliases": [
+            "Federer",
+            "Roger"
+          ],
+          "value": "20 titres",
+          "hint": "Le Suisse élégant, 8 Wimbledon."
+        },
+        {
+          "rank": 4,
+          "answer": "Pete Sampras",
+          "aliases": [
+            "Sampras",
+            "Pete"
+          ],
+          "value": "14 titres",
+          "hint": "Américain, roi des années 90 et du service-volée."
+        },
+        {
+          "rank": 5,
+          "answer": "Roy Emerson",
+          "aliases": [
+            "Emerson",
+            "Roy"
+          ],
+          "value": "12 titres",
+          "hint": "Un Australien des années 60, record longtemps imbattable."
         }
       ]
     },
@@ -367,6 +559,65 @@
           ],
           "value": "≈ 510 M d'abonnés",
           "hint": "Le n°10 argentin aux 8 Ballons d'or."
+        }
+      ]
+    },
+    {
+      "id": "jo-paris-2024-medailles-top5",
+      "category": "Sport",
+      "emoji": "🏅",
+      "title": "Le Top 5 du tableau des médailles des JO de Paris 2024",
+      "source": "CIO – classement officiel (médailles d'or, puis d'argent)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "États-Unis",
+          "aliases": [
+            "USA",
+            "Etats Unis",
+            "United States",
+            "Amérique",
+            "US"
+          ],
+          "value": "40 or · 126 médailles",
+          "hint": "Ils ne devancent le n°2 que grâce aux médailles d'argent."
+        },
+        {
+          "rank": 2,
+          "answer": "Chine",
+          "aliases": [
+            "China",
+            "Republique populaire de Chine"
+          ],
+          "value": "40 or · 91 médailles",
+          "hint": "Même nombre de titres que le n°1 !"
+        },
+        {
+          "rank": 3,
+          "answer": "Japon",
+          "aliases": [
+            "Japan"
+          ],
+          "value": "20 or · 45 médailles",
+          "hint": "Pays hôte des Jeux précédents."
+        },
+        {
+          "rank": 4,
+          "answer": "Australie",
+          "aliases": [
+            "Australia"
+          ],
+          "value": "18 or · 53 médailles",
+          "hint": "Une nation de nageurs, aux antipodes."
+        },
+        {
+          "rank": 5,
+          "answer": "France",
+          "aliases": [
+            "Équipe de France"
+          ],
+          "value": "16 or · 64 médailles",
+          "hint": "Le pays hôte, porté par Léon Marchand et Teddy Riner."
         }
       ]
     },
@@ -487,6 +738,67 @@
       ]
     },
     {
+      "id": "f1-victoires-top5",
+      "category": "Sport",
+      "emoji": "🏎️",
+      "title": "Les 5 pilotes qui ont gagné le plus de Grands Prix de Formule 1",
+      "source": "FIA (fin 2025)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Lewis Hamilton",
+          "aliases": [
+            "Hamilton",
+            "Lewis"
+          ],
+          "value": "105 victoires",
+          "hint": "Britannique, 7 titres de champion du monde, passé chez Ferrari en 2025."
+        },
+        {
+          "rank": 2,
+          "answer": "Michael Schumacher",
+          "aliases": [
+            "Schumacher",
+            "Schumi",
+            "Michael"
+          ],
+          "value": "91 victoires",
+          "hint": "L'Allemand légende de Ferrari au début des années 2000."
+        },
+        {
+          "rank": 3,
+          "answer": "Max Verstappen",
+          "aliases": [
+            "Verstappen",
+            "Max"
+          ],
+          "value": "≈ 70 victoires",
+          "hint": "Le Néerlandais de Red Bull, 4 titres d'affilée (2021-2024)."
+        },
+        {
+          "rank": 4,
+          "answer": "Sebastian Vettel",
+          "aliases": [
+            "Vettel",
+            "Seb"
+          ],
+          "value": "53 victoires",
+          "hint": "Allemand, 4 titres avec Red Bull (2010-2013)."
+        },
+        {
+          "rank": 5,
+          "answer": "Alain Prost",
+          "aliases": [
+            "Prost",
+            "Alain",
+            "Le Professeur"
+          ],
+          "value": "51 victoires",
+          "hint": "Le Français surnommé « le Professeur », rival de Senna."
+        }
+      ]
+    },
+    {
       "id": "pokedex-top10",
       "category": "Jeux vidéo",
       "emoji": "🔴",
@@ -542,7 +854,8 @@
           "rank": 6,
           "answer": "Dracaufeu",
           "aliases": [
-            "Charizard", "Dracofeu"
+            "Charizard",
+            "Dracofeu"
           ],
           "value": "n°006",
           "hint": "Le dragon cracheur de feu, carte star des années 90."
@@ -582,6 +895,70 @@
           ],
           "value": "n°010",
           "hint": "Une chenille verte, premier Pokémon attrapé par Sacha."
+        }
+      ]
+    },
+    {
+      "id": "ballon-or-francais-top5",
+      "category": "Sport",
+      "emoji": "🇫🇷",
+      "title": "Les 5 derniers Français sacrés Ballon d'or, du plus ancien au plus récent",
+      "source": "France Football",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Michel Platini",
+          "aliases": [
+            "Platini",
+            "Michel"
+          ],
+          "value": "1983, 84, 85",
+          "hint": "Le seul à l'avoir gagné trois fois de suite."
+        },
+        {
+          "rank": 2,
+          "answer": "Jean-Pierre Papin",
+          "aliases": [
+            "Papin",
+            "JPP",
+            "Jean Pierre Papin"
+          ],
+          "value": "1991",
+          "hint": "Buteur star de l'OM, roi des « papinades »."
+        },
+        {
+          "rank": 3,
+          "answer": "Zinédine Zidane",
+          "aliases": [
+            "Zidane",
+            "Zizou",
+            "Zinedine"
+          ],
+          "value": "1998",
+          "hint": "Doublé de la tête en finale de la Coupe du monde."
+        },
+        {
+          "rank": 4,
+          "answer": "Karim Benzema",
+          "aliases": [
+            "Benzema",
+            "Karim",
+            "KB9"
+          ],
+          "value": "2022",
+          "hint": "Le « Nueve » du Real Madrid."
+        },
+        {
+          "rank": 5,
+          "answer": "Ousmane Dembélé",
+          "aliases": [
+            "Dembélé",
+            "Dembele",
+            "Ousmane",
+            "Dembouz"
+          ],
+          "value": "2025",
+          "hint": "Ailier du PSG vainqueur de la Ligue des champions."
         }
       ]
     },
@@ -653,6 +1030,68 @@
           ],
           "value": "2007",
           "hint": "Ombrage débarque à Poudlard."
+        }
+      ]
+    },
+    {
+      "id": "jo-hiver-villes-top5",
+      "category": "Sport",
+      "emoji": "⛷️",
+      "title": "Les 5 dernières villes hôtes des Jeux olympiques d'hiver, de la plus récente à la plus ancienne",
+      "source": "CIO",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Milan-Cortina",
+          "aliases": [
+            "Milan",
+            "Cortina",
+            "Milan Cortina",
+            "Milano Cortina",
+            "Cortina d'Ampezzo"
+          ],
+          "value": "2026",
+          "hint": "Deux villes italiennes associées."
+        },
+        {
+          "rank": 2,
+          "answer": "Pékin",
+          "aliases": [
+            "Pekin",
+            "Beijing"
+          ],
+          "value": "2022",
+          "hint": "Seule ville à avoir accueilli les JO d'été ET d'hiver."
+        },
+        {
+          "rank": 3,
+          "answer": "PyeongChang",
+          "aliases": [
+            "Pyeongchang",
+            "Pyongchang",
+            "Pyeong Chang"
+          ],
+          "value": "2018",
+          "hint": "En Corée du Sud."
+        },
+        {
+          "rank": 4,
+          "answer": "Sotchi",
+          "aliases": [
+            "Sochi",
+            "Sotchi"
+          ],
+          "value": "2014",
+          "hint": "Station balnéaire russe au bord de la mer Noire."
+        },
+        {
+          "rank": 5,
+          "answer": "Vancouver",
+          "aliases": [
+            "Vancouver"
+          ],
+          "value": "2010",
+          "hint": "Au Canada, sur la côte Pacifique."
         }
       ]
     },
@@ -789,64 +1228,6 @@
           ],
           "value": "2022",
           "hint": "Treize nuits blanches. « Anti-Hero »."
-        }
-      ]
-    },
-    {
-      "id": "simpson-famille-top5",
-      "category": "Séries",
-      "emoji": "🍩",
-      "title": "Les 5 Simpson du 742 Evergreen Terrace, du plus âgé au plus jeune",
-      "source": "Les Simpson (âges officiels de la série)",
-      "items": [
-        {
-          "rank": 1,
-          "answer": "Homer",
-          "aliases": [
-            "Homer Simpson",
-            "Homer J. Simpson"
-          ],
-          "value": "39 ans",
-          "hint": "D'oh !"
-        },
-        {
-          "rank": 2,
-          "answer": "Marge",
-          "aliases": [
-            "Marge Simpson",
-            "Marjorie"
-          ],
-          "value": "36 ans",
-          "hint": "Une coiffure bleue très, très haute."
-        },
-        {
-          "rank": 3,
-          "answer": "Bart",
-          "aliases": [
-            "Bart Simpson",
-            "Bartholomew"
-          ],
-          "value": "10 ans",
-          "hint": "Ay caramba !"
-        },
-        {
-          "rank": 4,
-          "answer": "Lisa",
-          "aliases": [
-            "Lisa Simpson"
-          ],
-          "value": "8 ans",
-          "hint": "Saxophoniste et première de la classe."
-        },
-        {
-          "rank": 5,
-          "answer": "Maggie",
-          "aliases": [
-            "Maggie Simpson",
-            "Margaret"
-          ],
-          "value": "1 an",
-          "hint": "Toujours avec sa tétine."
         }
       ]
     },
@@ -1446,58 +1827,6 @@
           ],
           "value": "2006",
           "hint": "On joue en agitant une télécommande."
-        }
-      ]
-    },
-    {
-      "id": "star-wars-originale-top3",
-      "category": "Cinéma",
-      "emoji": "🌌",
-      "title": "Les 3 films de la trilogie originale Star Wars, dans l'ordre",
-      "source": "Lucasfilm",
-      "items": [
-        {
-          "rank": 1,
-          "answer": "Un nouvel espoir",
-          "aliases": [
-            "La Guerre des étoiles",
-            "Star Wars 4",
-            "Star Wars IV",
-            "Épisode IV",
-            "Episode 4",
-            "A New Hope",
-            "Star Wars un nouvel espoir"
-          ],
-          "value": "1977",
-          "hint": "Luke quitte Tatooine et détruit l'Étoile de la mort."
-        },
-        {
-          "rank": 2,
-          "answer": "L'Empire contre-attaque",
-          "aliases": [
-            "Empire contre-attaque",
-            "Star Wars 5",
-            "Star Wars V",
-            "Épisode V",
-            "Episode 5",
-            "The Empire Strikes Back"
-          ],
-          "value": "1980",
-          "hint": "« Je suis ton père. »"
-        },
-        {
-          "rank": 3,
-          "answer": "Le Retour du Jedi",
-          "aliases": [
-            "Retour du Jedi",
-            "Star Wars 6",
-            "Star Wars VI",
-            "Épisode VI",
-            "Episode 6",
-            "Return of the Jedi"
-          ],
-          "value": "1983",
-          "hint": "Des Ewoks et la chute de l'Empereur."
         }
       ]
     }
