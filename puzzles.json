@@ -11,35 +11,56 @@
         {
           "rank": 1,
           "answer": "Minecraft",
-          "aliases": ["mine craft"],
+          "aliases": [
+            "mine craft"
+          ],
           "value": "350 millions+",
           "hint": "Des blocs, des creepers et une pioche."
         },
         {
           "rank": 2,
           "answer": "Grand Theft Auto V",
-          "aliases": ["GTA 5", "GTA V", "GTA", "Grand Theft Auto 5", "GTA Five"],
+          "aliases": [
+            "GTA 5",
+            "GTA V",
+            "GTA",
+            "Grand Theft Auto 5",
+            "GTA Five"
+          ],
           "value": "215 millions+",
           "hint": "Los Santos, trois braqueurs, et un succès qui dure depuis 2013."
         },
         {
           "rank": 3,
           "answer": "Tetris (EA)",
-          "aliases": ["Tetris", "Tetris EA", "Tetris mobile"],
+          "aliases": [
+            "Tetris",
+            "Tetris EA",
+            "Tetris mobile"
+          ],
           "value": "100 millions",
           "hint": "Des pièces qui tombent… dans sa version mobile signée EA."
         },
         {
           "rank": 4,
           "answer": "Wii Sports",
-          "aliases": ["Wii Sport", "Wiisports"],
+          "aliases": [
+            "Wii Sport",
+            "Wiisports"
+          ],
           "value": "82,9 millions",
           "hint": "Livré avec une console de 2006 : bowling et tennis en agitant le bras."
         },
         {
           "rank": 5,
           "answer": "Red Dead Redemption 2",
-          "aliases": ["RDR2", "RDR 2", "Red Dead 2", "Red Dead Redemption II", "Red Dead"],
+          "aliases": [
+            "RDR2",
+            "RDR 2",
+            "Red Dead 2",
+            "Red Dead Redemption II",
+            "Red Dead"
+          ],
           "value": "79 millions",
           "hint": "Arthur Morgan et la bande de Dutch, au Far West."
         }
@@ -55,21 +76,34 @@
         {
           "rank": 1,
           "answer": "Mercredi (saison 1)",
-          "aliases": ["Mercredi", "Wednesday", "Wednesday Addams", "Mercredi saison 1", "Wednesday saison 1"],
+          "aliases": [
+            "Mercredi",
+            "Wednesday",
+            "Wednesday Addams",
+            "Mercredi saison 1",
+            "Wednesday saison 1"
+          ],
           "value": "252,1 M de vues",
           "hint": "Une Addams en internat, et une danse devenue virale."
         },
         {
           "rank": 2,
           "answer": "Adolescence",
-          "aliases": ["Adolescence mini serie"],
+          "aliases": [
+            "Adolescence mini serie"
+          ],
           "value": "≈ 141 M de vues",
           "hint": "Mini-série britannique (2025) tournée entièrement en plans-séquences."
         },
         {
           "rank": 3,
           "answer": "Stranger Things (saison 4)",
-          "aliases": ["Stranger Things", "Stranger Things 4", "Stranger Things saison 4", "ST4"],
+          "aliases": [
+            "Stranger Things",
+            "Stranger Things 4",
+            "Stranger Things saison 4",
+            "ST4"
+          ],
           "value": "140,7 M de vues",
           "hint": "Hawkins, Vecna et « Running Up That Hill »."
         }
@@ -85,35 +119,50 @@
         {
           "rank": 1,
           "answer": "Temps mort",
-          "aliases": ["Tempsmort"],
+          "aliases": [
+            "Tempsmort"
+          ],
           "value": "2002",
           "hint": "Son tout premier album solo, juste après l'aventure Lunatic."
         },
         {
           "rank": 2,
           "answer": "Panthéon",
-          "aliases": ["Pantheon"],
+          "aliases": [
+            "Pantheon"
+          ],
           "value": "2004",
           "hint": "Le nom d'un monument parisien où reposent les grands hommes."
         },
         {
           "rank": 3,
           "answer": "Ouest Side",
-          "aliases": ["West Side", "Ouestside"],
+          "aliases": [
+            "West Side",
+            "Ouestside"
+          ],
           "value": "2006",
           "hint": "Un point cardinal… à la sauce Boulogne."
         },
         {
           "rank": 4,
           "answer": "0.9",
-          "aliases": ["09", "0,9", "Zero neuf", "Zero virgule neuf", "Zero point neuf"],
+          "aliases": [
+            "09",
+            "0,9",
+            "Zero neuf",
+            "Zero virgule neuf",
+            "Zero point neuf"
+          ],
           "value": "2008",
           "hint": "Son titre ressemble à un nombre décimal."
         },
         {
           "rank": 5,
           "answer": "Lunatic",
-          "aliases": ["Lunatic album"],
+          "aliases": [
+            "Lunatic album"
+          ],
           "value": "2010",
           "hint": "Il porte le nom de son ancien duo avec Ali."
         }
@@ -129,70 +178,108 @@
         {
           "rank": 1,
           "answer": "Avatar",
-          "aliases": ["Avatar 1"],
+          "aliases": [
+            "Avatar 1"
+          ],
           "value": "2,92 Md$",
           "hint": "James Cameron, les Na'vi et la planète Pandora (2009)."
         },
         {
           "rank": 2,
           "answer": "Avengers: Endgame",
-          "aliases": ["Endgame", "Avengers 4", "Avengers Endgame"],
+          "aliases": [
+            "Endgame",
+            "Avengers 4",
+            "Avengers Endgame"
+          ],
           "value": "2,80 Md$",
           "hint": "« Je suis inévitable. » (2019)"
         },
         {
           "rank": 3,
           "answer": "Avatar : La Voie de l'eau",
-          "aliases": ["Avatar 2", "Avatar la voie de l'eau", "Avatar The Way of Water", "The Way of Water", "La Voie de l'eau"],
+          "aliases": [
+            "Avatar 2",
+            "Avatar la voie de l'eau",
+            "Avatar The Way of Water",
+            "The Way of Water",
+            "La Voie de l'eau"
+          ],
           "value": "2,32 Md$",
           "hint": "Retour sur Pandora, cette fois sous l'océan (2022)."
         },
         {
           "rank": 4,
           "answer": "Titanic",
-          "aliases": ["Titanic 1997"],
+          "aliases": [
+            "Titanic 1997"
+          ],
           "value": "2,26 Md$",
           "hint": "« Je suis le roi du monde ! » (1997)"
         },
         {
           "rank": 5,
           "answer": "Ne Zha 2",
-          "aliases": ["Nezha 2", "Ne Zha"],
+          "aliases": [
+            "Nezha 2",
+            "Ne Zha"
+          ],
           "value": "≈ 2,2 Md$",
           "hint": "Film d'animation chinois, phénomène mondial de 2025."
         },
         {
           "rank": 6,
           "answer": "Star Wars : Le Réveil de la Force",
-          "aliases": ["Le Réveil de la Force", "The Force Awakens", "Star Wars 7", "Star Wars VII", "Star Wars épisode 7", "Star Wars épisode VII", "Star Wars The Force Awakens"],
+          "aliases": [
+            "Le Réveil de la Force",
+            "The Force Awakens",
+            "Star Wars 7",
+            "Star Wars VII",
+            "Star Wars épisode 7",
+            "Star Wars épisode VII",
+            "Star Wars The Force Awakens"
+          ],
           "value": "2,07 Md$",
           "hint": "Rey, Finn et le grand retour du Faucon Millenium (2015)."
         },
         {
           "rank": 7,
           "answer": "Avengers: Infinity War",
-          "aliases": ["Infinity War", "Avengers 3", "Avengers Infinity War"],
+          "aliases": [
+            "Infinity War",
+            "Avengers 3",
+            "Avengers Infinity War"
+          ],
           "value": "2,05 Md$",
           "hint": "Thanos claque des doigts (2018)."
         },
         {
           "rank": 8,
           "answer": "Spider-Man: No Way Home",
-          "aliases": ["No Way Home", "Spider-Man No Way Home", "Spiderman 3 Tom Holland"],
+          "aliases": [
+            "No Way Home",
+            "Spider-Man No Way Home",
+            "Spiderman 3 Tom Holland"
+          ],
           "value": "1,92 Md$",
           "hint": "Trois Spider-Man pour le prix d'un (2021)."
         },
         {
           "rank": 9,
           "answer": "Vice-Versa 2",
-          "aliases": ["Vice Versa 2", "Inside Out 2"],
+          "aliases": [
+            "Vice Versa 2",
+            "Inside Out 2"
+          ],
           "value": "1,70 Md$",
           "hint": "Anxiété débarque dans la tête de Riley (Pixar, 2024)."
         },
         {
           "rank": 10,
           "answer": "Jurassic World",
-          "aliases": ["Jurassic World 1"],
+          "aliases": [
+            "Jurassic World 1"
+          ],
           "value": "1,67 Md$",
           "hint": "Le parc rouvre enfin… très mauvaise idée (2015)."
         }
@@ -208,21 +295,33 @@
         {
           "rank": 1,
           "answer": "Baby Shark Dance",
-          "aliases": ["Baby Shark", "Baby Shark Pinkfong", "Pinkfong Baby Shark"],
+          "aliases": [
+            "Baby Shark",
+            "Baby Shark Pinkfong",
+            "Pinkfong Baby Shark"
+          ],
           "value": "≈ 16 Md de vues",
           "hint": "Doo doo doo doo doo doo…"
         },
         {
           "rank": 2,
           "answer": "Despacito",
-          "aliases": ["Despacito Luis Fonsi", "Luis Fonsi Despacito"],
+          "aliases": [
+            "Despacito Luis Fonsi",
+            "Luis Fonsi Despacito"
+          ],
           "value": "≈ 8,8 Md de vues",
           "hint": "Luis Fonsi feat. Daddy Yankee (2017)."
         },
         {
           "rank": 3,
           "answer": "Wheels on the Bus (CoComelon)",
-          "aliases": ["Wheels on the Bus", "The Wheels on the Bus", "Les roues de l'autobus", "Cocomelon Wheels on the Bus"],
+          "aliases": [
+            "Wheels on the Bus",
+            "The Wheels on the Bus",
+            "Les roues de l'autobus",
+            "Cocomelon Wheels on the Bus"
+          ],
           "value": "≈ 7,5 Md de vues",
           "hint": "Une comptine CoComelon… à bord d'un véhicule jaune."
         }
@@ -238,21 +337,34 @@
         {
           "rank": 1,
           "answer": "Instagram",
-          "aliases": ["@instagram", "Compte Instagram", "Instagram officiel"],
+          "aliases": [
+            "@instagram",
+            "Compte Instagram",
+            "Instagram officiel"
+          ],
           "value": "≈ 690 M d'abonnés",
           "hint": "Le compte officiel… de l'appli elle-même."
         },
         {
           "rank": 2,
           "answer": "Cristiano Ronaldo",
-          "aliases": ["Ronaldo", "CR7", "Cristiano", "@cristiano"],
+          "aliases": [
+            "Ronaldo",
+            "CR7",
+            "Cristiano",
+            "@cristiano"
+          ],
           "value": "≈ 660 M d'abonnés",
           "hint": "Siuuuu !"
         },
         {
           "rank": 3,
           "answer": "Lionel Messi",
-          "aliases": ["Messi", "Leo Messi", "@leomessi"],
+          "aliases": [
+            "Messi",
+            "Leo Messi",
+            "@leomessi"
+          ],
           "value": "≈ 510 M d'abonnés",
           "hint": "Le n°10 argentin aux 8 Ballons d'or."
         }
@@ -268,72 +380,1124 @@
         {
           "rank": 1,
           "answer": "Avengers: Endgame",
-          "aliases": ["Endgame", "Avengers 4", "Avengers Endgame"],
+          "aliases": [
+            "Endgame",
+            "Avengers 4",
+            "Avengers Endgame"
+          ],
           "value": "2,80 Md$",
           "hint": "La conclusion de la saga de l'Infini (2019)."
         },
         {
           "rank": 2,
           "answer": "Avengers: Infinity War",
-          "aliases": ["Infinity War", "Avengers 3", "Avengers Infinity War"],
+          "aliases": [
+            "Infinity War",
+            "Avengers 3",
+            "Avengers Infinity War"
+          ],
           "value": "2,05 Md$",
           "hint": "Thanos rassemble les six Pierres (2018)."
         },
         {
           "rank": 3,
           "answer": "Spider-Man: No Way Home",
-          "aliases": ["No Way Home", "Spider-Man No Way Home"],
+          "aliases": [
+            "No Way Home",
+            "Spider-Man No Way Home"
+          ],
           "value": "1,92 Md$",
           "hint": "Le multivers s'ouvre et Doctor Strange s'en mêle (2021)."
         },
         {
           "rank": 4,
           "answer": "Avengers",
-          "aliases": ["The Avengers", "Avengers 1", "Avengers 2012"],
+          "aliases": [
+            "The Avengers",
+            "Avengers 1",
+            "Avengers 2012"
+          ],
           "value": "1,52 Md$",
           "hint": "La première réunion de l'équipe, bataille de New York (2012)."
         },
         {
           "rank": 5,
           "answer": "Avengers : L'Ère d'Ultron",
-          "aliases": ["L'Ère d'Ultron", "Age of Ultron", "Avengers Age of Ultron", "Avengers 2"],
+          "aliases": [
+            "L'Ère d'Ultron",
+            "Age of Ultron",
+            "Avengers Age of Ultron",
+            "Avengers 2"
+          ],
           "value": "1,40 Md$",
           "hint": "Une IA créée par Tony Stark tourne mal (2015)."
         },
         {
           "rank": 6,
           "answer": "Black Panther",
-          "aliases": ["Black Panther 1"],
+          "aliases": [
+            "Black Panther 1"
+          ],
           "value": "1,35 Md$",
           "hint": "Wakanda forever ! (2018)"
         },
         {
           "rank": 7,
           "answer": "Deadpool & Wolverine",
-          "aliases": ["Deadpool et Wolverine", "Deadpool and Wolverine", "Deadpool Wolverine", "Deadpool 3"],
+          "aliases": [
+            "Deadpool et Wolverine",
+            "Deadpool and Wolverine",
+            "Deadpool Wolverine",
+            "Deadpool 3"
+          ],
           "value": "1,34 Md$",
           "hint": "Un mercenaire bavard et un mutant griffu (2024)."
         },
         {
           "rank": 8,
           "answer": "Iron Man 3",
-          "aliases": ["Ironman 3", "Iron Man III"],
+          "aliases": [
+            "Ironman 3",
+            "Iron Man III"
+          ],
           "value": "1,21 Md$",
           "hint": "Tony Stark face au Mandarin (2013)."
         },
         {
           "rank": 9,
           "answer": "Captain America: Civil War",
-          "aliases": ["Civil War", "Captain America 3", "Captain America Civil War"],
+          "aliases": [
+            "Civil War",
+            "Captain America 3",
+            "Captain America Civil War"
+          ],
           "value": "1,15 Md$",
           "hint": "Team Cap contre Team Iron Man (2016)."
         },
         {
           "rank": 10,
           "answer": "Spider-Man: Far From Home",
-          "aliases": ["Far From Home", "Spider-Man Far From Home"],
+          "aliases": [
+            "Far From Home",
+            "Spider-Man Far From Home"
+          ],
           "value": "1,13 Md$",
           "hint": "Peter Parker en voyage scolaire en Europe (2019)."
+        }
+      ]
+    },
+    {
+      "id": "pokedex-top10",
+      "category": "Jeux vidéo",
+      "emoji": "🔴",
+      "title": "Les 10 premiers Pokémon du Pokédex national",
+      "source": "Pokédex officiel (numéros 001 à 010)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Bulbizarre",
+          "aliases": [
+            "Bulbasaur"
+          ],
+          "value": "n°001",
+          "hint": "Un starter de type Plante avec un bulbe sur le dos."
+        },
+        {
+          "rank": 2,
+          "answer": "Herbizarre",
+          "aliases": [
+            "Ivysaur"
+          ],
+          "value": "n°002",
+          "hint": "L'évolution du n°1 : le bulbe devient un bouton de fleur."
+        },
+        {
+          "rank": 3,
+          "answer": "Florizarre",
+          "aliases": [
+            "Venusaur"
+          ],
+          "value": "n°003",
+          "hint": "La fleur est enfin éclose."
+        },
+        {
+          "rank": 4,
+          "answer": "Salamèche",
+          "aliases": [
+            "Charmander"
+          ],
+          "value": "n°004",
+          "hint": "Starter Feu : si sa queue s'éteint, ça va mal."
+        },
+        {
+          "rank": 5,
+          "answer": "Reptincel",
+          "aliases": [
+            "Charmeleon"
+          ],
+          "value": "n°005",
+          "hint": "L'évolution intermédiaire, rouge et colérique."
+        },
+        {
+          "rank": 6,
+          "answer": "Dracaufeu",
+          "aliases": [
+            "Charizard", "Dracofeu"
+          ],
+          "value": "n°006",
+          "hint": "Le dragon cracheur de feu, carte star des années 90."
+        },
+        {
+          "rank": 7,
+          "answer": "Carapuce",
+          "aliases": [
+            "Squirtle"
+          ],
+          "value": "n°007",
+          "hint": "Starter Eau, une petite tortue."
+        },
+        {
+          "rank": 8,
+          "answer": "Carabaffe",
+          "aliases": [
+            "Wartortle"
+          ],
+          "value": "n°008",
+          "hint": "Tortue à la queue touffue."
+        },
+        {
+          "rank": 9,
+          "answer": "Tortank",
+          "aliases": [
+            "Blastoise"
+          ],
+          "value": "n°009",
+          "hint": "Deux canons à eau sur la carapace."
+        },
+        {
+          "rank": 10,
+          "answer": "Chenipan",
+          "aliases": [
+            "Caterpie"
+          ],
+          "value": "n°010",
+          "hint": "Une chenille verte, premier Pokémon attrapé par Sacha."
+        }
+      ]
+    },
+    {
+      "id": "harry-potter-films-top5",
+      "category": "Cinéma",
+      "emoji": "⚡",
+      "title": "Les 5 premiers films Harry Potter, dans l'ordre de sortie",
+      "source": "Warner Bros.",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Harry Potter à l'école des sorciers",
+          "aliases": [
+            "L'école des sorciers",
+            "Harry Potter 1",
+            "Philosopher's Stone",
+            "Sorcerer's Stone",
+            "Harry Potter and the Philosopher's Stone"
+          ],
+          "value": "2001",
+          "hint": "Harry découvre qu'il est un sorcier."
+        },
+        {
+          "rank": 2,
+          "answer": "Harry Potter et la Chambre des secrets",
+          "aliases": [
+            "La Chambre des secrets",
+            "Chambre des secrets",
+            "Harry Potter 2",
+            "Chamber of Secrets"
+          ],
+          "value": "2002",
+          "hint": "Un basilic, Dobby et une voiture volante."
+        },
+        {
+          "rank": 3,
+          "answer": "Harry Potter et le Prisonnier d'Azkaban",
+          "aliases": [
+            "Le Prisonnier d'Azkaban",
+            "Prisonnier d'Azkaban",
+            "Azkaban",
+            "Harry Potter 3",
+            "Prisoner of Azkaban"
+          ],
+          "value": "2004",
+          "hint": "Sirius Black s'évade, et un retourneur de temps."
+        },
+        {
+          "rank": 4,
+          "answer": "Harry Potter et la Coupe de feu",
+          "aliases": [
+            "La Coupe de feu",
+            "Coupe de feu",
+            "Harry Potter 4",
+            "Goblet of Fire"
+          ],
+          "value": "2005",
+          "hint": "Le Tournoi des Trois Sorciers."
+        },
+        {
+          "rank": 5,
+          "answer": "Harry Potter et l'Ordre du Phénix",
+          "aliases": [
+            "L'Ordre du Phénix",
+            "Ordre du Phénix",
+            "Harry Potter 5",
+            "Order of the Phoenix"
+          ],
+          "value": "2007",
+          "hint": "Ombrage débarque à Poudlard."
+        }
+      ]
+    },
+    {
+      "id": "nekfeu-albums-top3",
+      "category": "Rap français",
+      "emoji": "🎤",
+      "title": "Les 3 albums studio de Nekfeu, dans l'ordre de sortie",
+      "source": "Discographie officielle",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Feu",
+          "aliases": [
+            "Feu album"
+          ],
+          "value": "2015",
+          "hint": "Un titre de 3 lettres… qui brûle."
+        },
+        {
+          "rank": 2,
+          "answer": "Cyborg",
+          "aliases": [
+            "Cyborg album"
+          ],
+          "value": "2016",
+          "hint": "Sorti par surprise, mi-homme mi-machine."
+        },
+        {
+          "rank": 3,
+          "answer": "Les Étoiles vagabondes",
+          "aliases": [
+            "Etoiles vagabondes"
+          ],
+          "value": "2019",
+          "hint": "Sorti avec un film-documentaire tourné aux quatre coins du monde."
+        }
+      ]
+    },
+    {
+      "id": "taylor-swift-albums-top10",
+      "category": "Musique",
+      "emoji": "🎶",
+      "title": "Les 10 premiers albums studio de Taylor Swift, dans l'ordre",
+      "source": "Discographie officielle",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Taylor Swift",
+          "aliases": [
+            "Taylor Swift album",
+            "Debut"
+          ],
+          "value": "2006",
+          "hint": "Son premier album porte… son propre nom."
+        },
+        {
+          "rank": 2,
+          "answer": "Fearless",
+          "aliases": [
+            "Fearless album"
+          ],
+          "value": "2008",
+          "hint": "« Love Story » et « You Belong With Me »."
+        },
+        {
+          "rank": 3,
+          "answer": "Speak Now",
+          "aliases": [
+            "Speak Now album"
+          ],
+          "value": "2010",
+          "hint": "Entièrement écrit par elle seule. Contient « Mine »."
+        },
+        {
+          "rank": 4,
+          "answer": "Red",
+          "aliases": [
+            "Red album"
+          ],
+          "value": "2012",
+          "hint": "Une couleur, et « All Too Well »."
+        },
+        {
+          "rank": 5,
+          "answer": "1989",
+          "aliases": [
+            "1989 album"
+          ],
+          "value": "2014",
+          "hint": "Une année de naissance. « Shake It Off »."
+        },
+        {
+          "rank": 6,
+          "answer": "Reputation",
+          "aliases": [
+            "Reputation album"
+          ],
+          "value": "2017",
+          "hint": "Serpents et « Look What You Made Me Do »."
+        },
+        {
+          "rank": 7,
+          "answer": "Lover",
+          "aliases": [
+            "Lover album"
+          ],
+          "value": "2019",
+          "hint": "Rose pastel et « ME! »."
+        },
+        {
+          "rank": 8,
+          "answer": "Folklore",
+          "aliases": [
+            "Folklore album"
+          ],
+          "value": "2020",
+          "hint": "Album surprise de confinement, en noir et blanc."
+        },
+        {
+          "rank": 9,
+          "answer": "Evermore",
+          "aliases": [
+            "Evermore album"
+          ],
+          "value": "2020",
+          "hint": "L'album « sœur » sorti 5 mois après le n°8."
+        },
+        {
+          "rank": 10,
+          "answer": "Midnights",
+          "aliases": [
+            "Midnights album"
+          ],
+          "value": "2022",
+          "hint": "Treize nuits blanches. « Anti-Hero »."
+        }
+      ]
+    },
+    {
+      "id": "simpson-famille-top5",
+      "category": "Séries",
+      "emoji": "🍩",
+      "title": "Les 5 Simpson du 742 Evergreen Terrace, du plus âgé au plus jeune",
+      "source": "Les Simpson (âges officiels de la série)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Homer",
+          "aliases": [
+            "Homer Simpson",
+            "Homer J. Simpson"
+          ],
+          "value": "39 ans",
+          "hint": "D'oh !"
+        },
+        {
+          "rank": 2,
+          "answer": "Marge",
+          "aliases": [
+            "Marge Simpson",
+            "Marjorie"
+          ],
+          "value": "36 ans",
+          "hint": "Une coiffure bleue très, très haute."
+        },
+        {
+          "rank": 3,
+          "answer": "Bart",
+          "aliases": [
+            "Bart Simpson",
+            "Bartholomew"
+          ],
+          "value": "10 ans",
+          "hint": "Ay caramba !"
+        },
+        {
+          "rank": 4,
+          "answer": "Lisa",
+          "aliases": [
+            "Lisa Simpson"
+          ],
+          "value": "8 ans",
+          "hint": "Saxophoniste et première de la classe."
+        },
+        {
+          "rank": 5,
+          "answer": "Maggie",
+          "aliases": [
+            "Maggie Simpson",
+            "Margaret"
+          ],
+          "value": "1 an",
+          "hint": "Toujours avec sa tétine."
+        }
+      ]
+    },
+    {
+      "id": "one-piece-equipage-top5",
+      "category": "Manga",
+      "emoji": "🏴‍☠️",
+      "title": "Les 5 premiers membres à rejoindre l'équipage de Luffy (One Piece)",
+      "source": "One Piece, Eiichiro Oda",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Zoro",
+          "aliases": [
+            "Roronoa Zoro",
+            "Zorro"
+          ],
+          "value": "Épéiste",
+          "hint": "Il se bat avec trois sabres… et se perd tout le temps."
+        },
+        {
+          "rank": 2,
+          "answer": "Nami",
+          "aliases": [
+            "Nami la chatte voleuse"
+          ],
+          "value": "Navigatrice",
+          "hint": "Elle adore les mandarines et l'argent."
+        },
+        {
+          "rank": 3,
+          "answer": "Usopp",
+          "aliases": [
+            "Pipo",
+            "Ussop",
+            "Sogeking"
+          ],
+          "value": "Tireur d'élite",
+          "hint": "Un long nez et de gros mensonges."
+        },
+        {
+          "rank": 4,
+          "answer": "Sanji",
+          "aliases": [
+            "Vinsmoke Sanji"
+          ],
+          "value": "Cuisinier",
+          "hint": "Il se bat uniquement avec ses jambes."
+        },
+        {
+          "rank": 5,
+          "answer": "Chopper",
+          "aliases": [
+            "Tony Tony Chopper"
+          ],
+          "value": "Médecin",
+          "hint": "Un renne qui a mangé un fruit du démon."
+        }
+      ]
+    },
+    {
+      "id": "spiderman-acteurs-top3",
+      "category": "Cinéma",
+      "emoji": "🕷️",
+      "title": "Les 3 acteurs qui ont porté le costume de Spider-Man au cinéma depuis 2002, dans l'ordre",
+      "source": "Sony / Marvel Studios",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Tobey Maguire",
+          "aliases": [
+            "Maguire",
+            "Tobey"
+          ],
+          "value": "2002",
+          "hint": "La trilogie de Sam Raimi."
+        },
+        {
+          "rank": 2,
+          "answer": "Andrew Garfield",
+          "aliases": [
+            "Garfield",
+            "Andrew"
+          ],
+          "value": "2012",
+          "hint": "The Amazing Spider-Man."
+        },
+        {
+          "rank": 3,
+          "answer": "Tom Holland",
+          "aliases": [
+            "Holland",
+            "Tom"
+          ],
+          "value": "2016",
+          "hint": "Il apparaît pour la 1re fois dans Captain America: Civil War."
+        }
+      ]
+    },
+    {
+      "id": "iphone-top5",
+      "category": "Tech",
+      "emoji": "📱",
+      "title": "Les 5 premiers iPhone, dans l'ordre de sortie",
+      "source": "Apple",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "iPhone",
+          "aliases": [
+            "iPhone 1",
+            "iPhone 2G",
+            "Premier iPhone",
+            "iPhone original"
+          ],
+          "value": "2007",
+          "hint": "Le tout premier, présenté par Steve Jobs."
+        },
+        {
+          "rank": 2,
+          "answer": "iPhone 3G",
+          "aliases": [
+            "3G"
+          ],
+          "value": "2008",
+          "hint": "Il tire son nom du réseau mobile qu'il gère enfin."
+        },
+        {
+          "rank": 3,
+          "answer": "iPhone 3GS",
+          "aliases": [
+            "3GS"
+          ],
+          "value": "2009",
+          "hint": "Le même nom que le précédent… avec un S pour « speed »."
+        },
+        {
+          "rank": 4,
+          "answer": "iPhone 4",
+          "aliases": [
+            "4"
+          ],
+          "value": "2010",
+          "hint": "Design en verre et acier, et FaceTime."
+        },
+        {
+          "rank": 5,
+          "answer": "iPhone 4S",
+          "aliases": [
+            "4S"
+          ],
+          "value": "2011",
+          "hint": "Le premier avec Siri."
+        }
+      ]
+    },
+    {
+      "id": "game-awards-goty-top5",
+      "category": "Jeux vidéo",
+      "emoji": "🏅",
+      "title": "Les jeux élus « Jeu de l'année » aux Game Awards de 2020 à 2024",
+      "source": "The Game Awards",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "The Last of Us Part II",
+          "aliases": [
+            "The Last of Us 2",
+            "The Last of Us Part 2",
+            "TLOU 2",
+            "TLOU2",
+            "Last of Us 2",
+            "The Last of Us"
+          ],
+          "value": "2020",
+          "hint": "Ellie cherche vengeance à Seattle."
+        },
+        {
+          "rank": 2,
+          "answer": "It Takes Two",
+          "aliases": [
+            "It Take Two"
+          ],
+          "value": "2021",
+          "hint": "Un jeu coopératif obligatoire : un couple transformé en poupées."
+        },
+        {
+          "rank": 3,
+          "answer": "Elden Ring",
+          "aliases": [
+            "Eldenring"
+          ],
+          "value": "2022",
+          "hint": "Un monde ouvert signé FromSoftware et George R. R. Martin."
+        },
+        {
+          "rank": 4,
+          "answer": "Baldur's Gate 3",
+          "aliases": [
+            "Baldurs Gate 3",
+            "Baldur's Gate III",
+            "BG3",
+            "Baldur's Gate"
+          ],
+          "value": "2023",
+          "hint": "Un RPG Donjons & Dragons signé Larian."
+        },
+        {
+          "rank": 5,
+          "answer": "Astro Bot",
+          "aliases": [
+            "Astrobot"
+          ],
+          "value": "2024",
+          "hint": "Un petit robot PlayStation en plateforme 3D."
+        }
+      ]
+    },
+    {
+      "id": "france-entrees-top3",
+      "category": "Cinéma",
+      "emoji": "🇫🇷",
+      "title": "Les 3 films qui ont fait le plus d'entrées au cinéma en France",
+      "source": "CNC (entrées cumulées)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Titanic",
+          "aliases": [
+            "Titanic 1997"
+          ],
+          "value": "≈ 21,8 M d'entrées",
+          "hint": "Un paquebot, Leonardo DiCaprio et un iceberg."
+        },
+        {
+          "rank": 2,
+          "answer": "Bienvenue chez les Ch'tis",
+          "aliases": [
+            "Les Ch'tis",
+            "Bienvenue chez les Chtis",
+            "Chtis"
+          ],
+          "value": "≈ 20,5 M d'entrées",
+          "hint": "Dany Boon, le Nord et « hein biloute »."
+        },
+        {
+          "rank": 3,
+          "answer": "Intouchables",
+          "aliases": [
+            "Les Intouchables"
+          ],
+          "value": "≈ 19,4 M d'entrées",
+          "hint": "Omar Sy et François Cluzet (2011)."
+        }
+      ]
+    },
+    {
+      "id": "marvel-disneyplus-top3",
+      "category": "Séries",
+      "emoji": "🦸",
+      "title": "Les 3 premières séries Marvel Studios sur Disney+, dans l'ordre de sortie",
+      "source": "Marvel Studios",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "WandaVision",
+          "aliases": [
+            "Wanda Vision",
+            "Wanda"
+          ],
+          "value": "Janvier 2021",
+          "hint": "Une sitcom en noir et blanc… qui cache quelque chose."
+        },
+        {
+          "rank": 2,
+          "answer": "Falcon et le Soldat de l'hiver",
+          "aliases": [
+            "The Falcon and the Winter Soldier",
+            "Falcon and the Winter Soldier",
+            "Falcon et le soldat de l hiver",
+            "Falcon"
+          ],
+          "value": "Mars 2021",
+          "hint": "Sam Wilson et Bucky Barnes en duo."
+        },
+        {
+          "rank": 3,
+          "answer": "Loki",
+          "aliases": [
+            "Loki serie"
+          ],
+          "value": "Juin 2021",
+          "hint": "Le dieu de la malice face au TVA."
+        }
+      ]
+    },
+    {
+      "id": "pixar-films-top5",
+      "category": "Cinéma",
+      "emoji": "🧸",
+      "title": "Les 5 premiers longs-métrages Pixar, dans l'ordre de sortie",
+      "source": "Pixar Animation Studios",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Toy Story",
+          "aliases": [
+            "Toy Story 1"
+          ],
+          "value": "1995",
+          "hint": "Le premier film entièrement en images de synthèse."
+        },
+        {
+          "rank": 2,
+          "answer": "1001 pattes",
+          "aliases": [
+            "Mille et une pattes",
+            "1001 pattes",
+            "A Bug's Life"
+          ],
+          "value": "1998",
+          "hint": "Une fourmi recrute des insectes de cirque."
+        },
+        {
+          "rank": 3,
+          "answer": "Toy Story 2",
+          "aliases": [
+            "Toy Story II"
+          ],
+          "value": "1999",
+          "hint": "Woody se fait voler par un collectionneur."
+        },
+        {
+          "rank": 4,
+          "answer": "Monstres et Cie",
+          "aliases": [
+            "Monstres & Cie",
+            "Monstres et compagnie",
+            "Monsters Inc",
+            "Monsters, Inc."
+          ],
+          "value": "2001",
+          "hint": "Sulli, Bob et la petite Bouh."
+        },
+        {
+          "rank": 5,
+          "answer": "Le Monde de Nemo",
+          "aliases": [
+            "Nemo",
+            "Le Monde de Némo",
+            "Finding Nemo"
+          ],
+          "value": "2003",
+          "hint": "Un poisson-clown cherche son fils."
+        }
+      ]
+    },
+    {
+      "id": "netflix-originales-top3",
+      "category": "Séries Netflix",
+      "emoji": "📺",
+      "title": "Les 3 toutes premières séries originales de Netflix, dans l'ordre de sortie",
+      "source": "Netflix",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Lilyhammer",
+          "aliases": [
+            "Lily Hammer"
+          ],
+          "value": "2012",
+          "hint": "Un mafieux new-yorkais se cache en Norvège."
+        },
+        {
+          "rank": 2,
+          "answer": "House of Cards",
+          "aliases": [
+            "House of Card"
+          ],
+          "value": "2013",
+          "hint": "Kevin Spacey en politicien sans scrupules à Washington."
+        },
+        {
+          "rank": 3,
+          "answer": "Hemlock Grove",
+          "aliases": [
+            "Hemlok Grove"
+          ],
+          "value": "2013",
+          "hint": "Série d'horreur produite par Eli Roth, avec un loup-garou."
+        }
+      ]
+    },
+    {
+      "id": "pnl-albums-top3",
+      "category": "Rap français",
+      "emoji": "🎤",
+      "title": "Les 3 albums studio de PNL, dans l'ordre de sortie",
+      "source": "Discographie officielle",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Le Monde Chico",
+          "aliases": [
+            "Monde Chico"
+          ],
+          "value": "2015",
+          "hint": "Un titre qui reprend la réplique culte de Scarface."
+        },
+        {
+          "rank": 2,
+          "answer": "Dans la légende",
+          "aliases": [
+            "Dans la legende",
+            "DLL"
+          ],
+          "value": "2016",
+          "hint": "Contient « Naha » et « Jusqu'au dernier gramme »."
+        },
+        {
+          "rank": 3,
+          "answer": "Deux frères",
+          "aliases": [
+            "Deux freres",
+            "2 frères",
+            "Deux frere"
+          ],
+          "value": "2019",
+          "hint": "Ademo et N.O.S, tout simplement."
+        }
+      ]
+    },
+    {
+      "id": "james-bond-acteurs-top5",
+      "category": "Cinéma",
+      "emoji": "🍸",
+      "title": "Les 5 premiers acteurs de James Bond dans la saga officielle",
+      "source": "EON Productions",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Sean Connery",
+          "aliases": [
+            "Connery"
+          ],
+          "value": "1962 · James Bond 007 contre Dr No",
+          "hint": "L'Écossais qui a tout commencé."
+        },
+        {
+          "rank": 2,
+          "answer": "George Lazenby",
+          "aliases": [
+            "Lazenby"
+          ],
+          "value": "1969 · Au service secret de Sa Majesté",
+          "hint": "Un seul film et puis s'en va."
+        },
+        {
+          "rank": 3,
+          "answer": "Roger Moore",
+          "aliases": [
+            "Moore"
+          ],
+          "value": "1973 · Vivre et laisser mourir",
+          "hint": "Le recordman : 7 films, avec beaucoup d'humour."
+        },
+        {
+          "rank": 4,
+          "answer": "Timothy Dalton",
+          "aliases": [
+            "Dalton"
+          ],
+          "value": "1987 · Tuer n'est pas jouer",
+          "hint": "Un Bond plus sombre, pour 2 films."
+        },
+        {
+          "rank": 5,
+          "answer": "Pierce Brosnan",
+          "aliases": [
+            "Brosnan"
+          ],
+          "value": "1995 · GoldenEye",
+          "hint": "Le Bond des années 90, et d'un jeu N64 culte."
+        }
+      ]
+    },
+    {
+      "id": "pokemon-regions-top5",
+      "category": "Jeux vidéo",
+      "emoji": "🗺️",
+      "title": "Les 5 premières régions des jeux Pokémon principaux",
+      "source": "The Pokémon Company",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Kanto",
+          "aliases": [
+            "Kantō"
+          ],
+          "value": "1996 · Rouge & Vert",
+          "hint": "Bourg Palette et le Professeur Chen."
+        },
+        {
+          "rank": 2,
+          "answer": "Johto",
+          "aliases": [
+            "Johto region"
+          ],
+          "value": "1999 · Or & Argent",
+          "hint": "La région voisine, avec les Pokémon légendaires Ho-Oh et Lugia."
+        },
+        {
+          "rank": 3,
+          "answer": "Hoenn",
+          "aliases": [
+            "Hoen"
+          ],
+          "value": "2002 · Rubis & Saphir",
+          "hint": "Une région tropicale pleine d'eau, sur Game Boy Advance."
+        },
+        {
+          "rank": 4,
+          "answer": "Sinnoh",
+          "aliases": [
+            "Sinoh"
+          ],
+          "value": "2006 · Diamant & Perle",
+          "hint": "La première région sur Nintendo DS."
+        },
+        {
+          "rank": 5,
+          "answer": "Unys",
+          "aliases": [
+            "Unova",
+            "Isshu"
+          ],
+          "value": "2010 · Noir & Blanc",
+          "hint": "Inspirée de New York."
+        }
+      ]
+    },
+    {
+      "id": "nintendo-consoles-top5",
+      "category": "Jeux vidéo",
+      "emoji": "🕹️",
+      "title": "Les 5 consoles de salon Nintendo à cartouches ou disques, avant la Wii U (ordre de sortie)",
+      "source": "Nintendo (dates de sortie au Japon)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "NES",
+          "aliases": [
+            "Nintendo Entertainment System",
+            "Famicom",
+            "Nes"
+          ],
+          "value": "1983",
+          "hint": "La console grise à manettes rectangulaires."
+        },
+        {
+          "rank": 2,
+          "answer": "Super Nintendo",
+          "aliases": [
+            "SNES",
+            "Super NES",
+            "Super Famicom"
+          ],
+          "value": "1990",
+          "hint": "Super Mario World et Donkey Kong Country."
+        },
+        {
+          "rank": 3,
+          "answer": "Nintendo 64",
+          "aliases": [
+            "N64",
+            "Nintendo64"
+          ],
+          "value": "1996",
+          "hint": "Une manette à trois poignées et GoldenEye."
+        },
+        {
+          "rank": 4,
+          "answer": "GameCube",
+          "aliases": [
+            "Nintendo GameCube",
+            "Game Cube",
+            "NGC"
+          ],
+          "value": "2001",
+          "hint": "Une console cubique avec une poignée."
+        },
+        {
+          "rank": 5,
+          "answer": "Wii",
+          "aliases": [
+            "Nintendo Wii"
+          ],
+          "value": "2006",
+          "hint": "On joue en agitant une télécommande."
+        }
+      ]
+    },
+    {
+      "id": "star-wars-originale-top3",
+      "category": "Cinéma",
+      "emoji": "🌌",
+      "title": "Les 3 films de la trilogie originale Star Wars, dans l'ordre",
+      "source": "Lucasfilm",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Un nouvel espoir",
+          "aliases": [
+            "La Guerre des étoiles",
+            "Star Wars 4",
+            "Star Wars IV",
+            "Épisode IV",
+            "Episode 4",
+            "A New Hope",
+            "Star Wars un nouvel espoir"
+          ],
+          "value": "1977",
+          "hint": "Luke quitte Tatooine et détruit l'Étoile de la mort."
+        },
+        {
+          "rank": 2,
+          "answer": "L'Empire contre-attaque",
+          "aliases": [
+            "Empire contre-attaque",
+            "Star Wars 5",
+            "Star Wars V",
+            "Épisode V",
+            "Episode 5",
+            "The Empire Strikes Back"
+          ],
+          "value": "1980",
+          "hint": "« Je suis ton père. »"
+        },
+        {
+          "rank": 3,
+          "answer": "Le Retour du Jedi",
+          "aliases": [
+            "Retour du Jedi",
+            "Star Wars 6",
+            "Star Wars VI",
+            "Épisode VI",
+            "Episode 6",
+            "Return of the Jedi"
+          ],
+          "value": "1983",
+          "hint": "Des Ewoks et la chute de l'Empereur."
         }
       ]
     }

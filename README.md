@@ -11,7 +11,7 @@ Jeu quotidien de pop culture, entre *Wordle* et *Une famille en or* : chaque jou
 - Validation tolérante : majuscules, accents, ponctuation, espaces, articles (« le », « the »…), alias, et 1 à 2 fautes de frappe (sans confondre « Iron Man 2 » et « Iron Man 3 »).
 - Sauvegarde locale (`localStorage`) : partie en cours, statistiques, série de victoires, historique.
 - Modale de fin : stats, classement complet, bouton « Partager mon score » (texte à émojis copié dans le presse-papiers).
-- Mode archives (lien discret en bas) pour rejouer les 7 énigmes. Ces parties ne comptent pas dans les stats.
+- Mode archives (lien discret en bas) pour rejouer toutes les énigmes. Ces parties ne comptent pas dans les stats.
 
 ## Structure
 
