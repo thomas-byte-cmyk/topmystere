@@ -5,13 +5,15 @@ Jeu quotidien de pop culture, entre *Wordle* et *Une famille en or* : chaque jou
 ## Fonctionnalités
 
 - Un classement par jour, le même pour tout le monde (rotation automatique dans `puzzles.json`).
-- Cartes qui se retournent avec animation 3D à chaque bonne réponse (rang, nom exact, valeur).
-- 3 vies (❤️). Une mauvaise réponse ou un indice coûte une vie. Proposer deux fois la même mauvaise réponse ne coûte rien.
-- Indice 💡 : révèle la 1re lettre et un indice de la meilleure place encore cachée. Impossible quand il ne reste qu'une vie.
+- Style « plateau TV » : panneaux bleus qui se retournent en 3D, cadre doré avec ampoules, buzzer rouge.
+- Pas de vies : on peut se tromper autant qu'on veut, mais les erreurs sont comptées et apparaissent dans le score.
+- Joker 💡 (gratuit) : révèle la 1re lettre (le reste est masqué) et un indice de la meilleure place encore cachée.
+- Bouton « Abandonner » (avec confirmation) pour découvrir tout le classement.
+- Top 10 en mode compact pour voir un maximum de lignes sur un téléphone.
 - Validation tolérante : majuscules, accents, ponctuation, espaces, articles (« le », « the »…), alias, et 1 à 2 fautes de frappe (sans confondre « Iron Man 2 » et « Iron Man 3 »).
 - Sauvegarde locale (`localStorage`) : partie en cours, statistiques, série de victoires, historique.
 - Modale de fin : stats, classement complet, bouton « Partager mon score » (texte à émojis copié dans le presse-papiers).
-- Mode archives (lien discret en bas) pour rejouer toutes les énigmes. Ces parties ne comptent pas dans les stats.
+- Mode archives (icône dans l'en-tête) pour rejouer toutes les énigmes. Ces parties ne comptent pas dans les stats.
 
 ## Structure
 

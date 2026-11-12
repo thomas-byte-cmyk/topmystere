@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>TopMystère — le classement mystère du jour</title>
-  <meta name="description" content="Chaque jour, un classement pop culture à deviner. 3 vies, des indices, et ton score à partager." />
-  <meta name="theme-color" content="#0c0e14" />
+  <meta name="description" content="Chaque jour, un classement pop culture à deviner. Des jokers, et ton score à partager." />
+  <meta name="theme-color" content="#071447" />
   <meta name="color-scheme" content="dark" />
 
   <!-- Aperçu lors du partage du lien (réseaux sociaux / messageries) -->
@@ -18,7 +18,7 @@
   <!-- Polices (si pas de réseau, le jeu retombe sur les polices système) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -26,17 +26,22 @@
   <!-- ========== EN-TÊTE ========== -->
   <header class="topbar">
     <button id="btn-help" class="icon-btn" type="button" aria-label="Règles du jeu" title="Règles">?</button>
-    <h1 class="logo">Top<span>Mystère</span></h1>
-    <button id="btn-stats" class="icon-btn" type="button" aria-label="Statistiques" title="Statistiques">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M12 20V4M19 20v-6" /></svg>
-    </button>
+    <h1 class="logo">Top Mystère</h1>
+    <div class="topbar-right">
+      <button id="btn-archive" class="icon-btn" type="button" aria-label="Archives" title="Archives">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M5 7v12h14V7M9 11h6M3 4h18v3H3z" /></svg>
+      </button>
+      <button id="btn-stats" class="icon-btn" type="button" aria-label="Statistiques" title="Statistiques">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M12 20V4M19 20v-6" /></svg>
+      </button>
+    </div>
   </header>
 
   <!-- ========== ZONE DE JEU ========== -->
   <main id="app" class="app" aria-busy="true">
     <!-- Bandeau affiché uniquement en mode archives -->
     <div id="archive-banner" class="archive-banner" hidden>
-      <span>🗂 Mode archives — ne compte pas dans tes stats</span>
+      <span>Mode archives — ne compte pas dans tes stats</span>
       <div class="archive-banner-actions">
         <button id="btn-restart" type="button" class="chip-btn">↺ Recommencer</button>
         <button id="btn-back-daily" type="button" class="chip-btn">Défi du jour</button>
@@ -55,50 +60,88 @@
       <p id="puzzle-source" class="puzzle-source"></p>
     </section>
 
-    <div class="status-bar">
-      <div id="lives" class="lives" aria-label="Vies restantes"></div>
-      <div id="progress" class="progress-text"></div>
+    <!-- Le plateau : cadre doré + ampoules + lignes du classement (générées par app.js) -->
+    <div class="board-frame">
+      <div class="board-inner">
+        <div id="bulbs" class="bulbs" aria-hidden="true"></div>
+        <ol id="board" class="board"></ol>
+      </div>
     </div>
 
-    <!-- Les lignes du classement sont générées par app.js -->
-    <ol id="board" class="board"></ol>
+    <!-- Compteur d'erreurs + score -->
+    <div class="status-bar">
+      <div class="errors" aria-live="polite">
+        <span class="x-box" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" /></svg>
+        </span>
+        <span id="errors-text" class="errors-text">0 erreur</span>
+      </div>
+      <div class="score">
+        <span id="score" class="score-value">0/0</span>
+        <span class="score-label">trouvés</span>
+      </div>
+    </div>
+
+    <!-- Mauvaises réponses déjà proposées -->
+    <div id="wrong-list" class="wrong-list" aria-label="Mauvaises réponses"></div>
   </main>
 
   <!-- ========== COMMANDES (collées en bas de l'écran) ========== -->
   <footer class="controls">
-    <!-- Liste des mauvaises réponses déjà proposées (toujours visible au-dessus du champ) -->
-    <div id="wrong-list" class="wrong-list" aria-label="Mauvaises réponses"></div>
-
     <form id="guess-form" class="guess-form" autocomplete="off">
-      <label for="guess-input" class="sr-only">Ta proposition</label>
-      <input id="guess-input" class="guess-input" type="text" placeholder="Propose une réponse…"
+      <label for="guess-input" class="sr-only">Ta réponse</label>
+      <input id="guess-input" class="guess-input" type="text" placeholder="Ta réponse…"
              autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send" maxlength="80" />
-      <button id="btn-submit" class="btn btn-primary" type="submit">Valider</button>
+      <button id="btn-submit" class="buzzer" type="submit" aria-label="Valider ma réponse">Buzz</button>
     </form>
 
     <div class="controls-row">
-      <button id="btn-hint" class="btn btn-ghost" type="button">💡 Indice <small>(−1 ❤️)</small></button>
-      <button id="btn-results" class="btn btn-primary" type="button" hidden>Voir mon résultat</button>
+      <button id="btn-hint" class="btn btn-joker" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z" /></svg>
+        Joker
+      </button>
+      <button id="btn-giveup" class="btn btn-giveup" type="button">Abandonner</button>
+      <button id="btn-results" class="btn btn-gold" type="button" hidden>Voir mon résultat</button>
     </div>
-
-    <button id="btn-archive" class="archive-link" type="button">🗂 Archives</button>
   </footer>
 
   <!-- Notifications courtes -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <!-- Flash rouge lors d'une erreur -->
+  <div id="flash" class="flash" aria-hidden="true"></div>
 
   <!-- ========== MODALE : FIN DE PARTIE ========== -->
-  <dialog id="modal-end" class="modal">
+  <dialog id="modal-end" class="modal modal-end">
     <button class="modal-close" type="button" data-close aria-label="Fermer">✕</button>
     <div class="modal-body">
-      <p id="end-emoji" class="end-emoji">🏆</p>
-      <h3 id="end-title" class="modal-title">Bravo !</h3>
-      <p id="end-subtitle" class="end-subtitle"></p>
+      <p id="end-kicker" class="end-kicker"></p>
+      <h3 id="end-title" class="end-title">Bravo !</h3>
+
+      <div class="scoreboard">
+        <div class="scoreboard-cell">
+          <span id="end-found" class="scoreboard-value">0/0</span>
+          <span class="scoreboard-label">trouvés</span>
+        </div>
+        <div class="scoreboard-sep"></div>
+        <div class="scoreboard-cell">
+          <span id="end-errors" class="scoreboard-value">0</span>
+          <span id="end-errors-label" class="scoreboard-label">erreur</span>
+        </div>
+        <div class="scoreboard-sep"></div>
+        <div class="scoreboard-cell">
+          <span id="end-hints" class="scoreboard-value">0</span>
+          <span id="end-hints-label" class="scoreboard-label">joker</span>
+        </div>
+      </div>
+
       <p id="end-grid" class="end-grid" aria-label="Résumé de la partie"></p>
 
       <div id="end-stats" class="stats-grid"></div>
 
-      <button id="btn-share" class="btn btn-primary btn-wide" type="button">📋 Partager mon score</button>
+      <button id="btn-share" class="btn btn-gold btn-wide" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13" /></svg>
+        Partager mon score
+      </button>
 
       <h4 class="section-title">Le classement complet</h4>
       <ol id="end-ranking" class="end-ranking"></ol>
@@ -113,15 +156,15 @@
     <div class="modal-body">
       <h3 class="modal-title">Comment jouer ?</h3>
       <ul class="rules">
-        <li>🔒 Chaque jour, un <strong>classement mystère</strong> (Top 3, Top 5 ou Top 10) sur la pop culture.</li>
-        <li>⌨️ Propose des réponses : si elle fait partie du classement, sa ligne se retourne avec son rang et sa valeur.</li>
-        <li>❤️ Tu as <strong>3 vies</strong>. Chaque mauvaise réponse en coûte une.</li>
-        <li>💡 Le bouton <strong>Indice</strong> révèle la 1<sup>re</sup> lettre et un indice d'une réponse manquante… contre 1 vie.</li>
-        <li>✍️ Pas besoin d'accents ni de majuscules, et les petites fautes de frappe sont tolérées.</li>
-        <li>📤 À la fin, partage ton score (sans spoiler) avec tes amis !</li>
+        <li><strong>Chaque jour</strong>, un classement mystère (Top 3, Top 5 ou Top 10) sur la pop culture.</li>
+        <li><strong>Buzze</strong> tes réponses : si elle fait partie du classement, son panneau se retourne avec son rang et sa valeur.</li>
+        <li>Les <strong>erreurs</strong> ne t'éliminent pas, mais elles sont comptées dans ton score. Vise le sans-faute !</li>
+        <li>Le <strong>Joker</strong> révèle la 1<sup>re</sup> lettre et un indice de la meilleure place encore cachée.</li>
+        <li>Tu sèches ? <strong>Abandonne</strong> pour découvrir le classement complet.</li>
+        <li>Pas besoin d'accents ni de majuscules, et les petites fautes de frappe sont tolérées.</li>
       </ul>
       <p class="rules-example">Exemple de partage : <span>🟩🟥🟩💡🟩</span></p>
-      <button class="btn btn-primary btn-wide" type="button" data-close>C'est parti !</button>
+      <button class="btn btn-gold btn-wide" type="button" data-close>C'est parti !</button>
     </div>
   </dialog>
 

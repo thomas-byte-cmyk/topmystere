@@ -1,13 +1,18 @@
 /* ==========================================================================
    TopMystère — logique du jeu (JavaScript Vanilla, aucun framework)
 
+   Règles actuelles :
+     - pas de vies : on peut se tromper autant qu'on veut, les erreurs sont comptées ;
+     - le Joker (indice) est gratuit mais apparaît dans le score partagé ;
+     - on peut abandonner pour voir le classement complet.
+
    Organisation du fichier :
      1. Configuration
      2. Utilitaires (dates, normalisation du texte, distance de Levenshtein)
      3. Sauvegarde locale (localStorage)
      4. Chargement des énigmes (puzzles.json)
-     5. Logique de jeu (proposer, indice, victoire / défaite)
-     6. Affichage (plateau, vies, modales…)
+     5. Logique de jeu (proposer, joker, abandon, victoire)
+     6. Affichage (plateau, compteurs, modales, effets)
      7. Partage du score
      8. Démarrage
    ========================================================================== */
@@ -21,15 +26,17 @@ const CONFIG = {
   GAME_NAME: 'TopMystère',
   // Date (heure locale) du puzzle n°1. Ensuite, un nouveau puzzle chaque jour.
   LAUNCH_DATE: '2026-11-12',
-  MAX_LIVES: 3,
   PUZZLES_URL: 'puzzles.json',
   STORAGE_KEY: 'topmystere:v1',
   // Lien ajouté au message de partage. Laisser vide = adresse actuelle de la page.
   SHARE_URL: '',
+  // Nombre d'ampoules en haut du plateau
+  BULBS: 16,
 };
 
 const EMOJI = { correct: '🟩', wrong: '🟥', hint: '💡' };
 const PRAISE = ['Bien vu !', 'Excellent !', 'Yes !', 'Bonne pioche !', 'Incroyable !', 'Exact !'];
+const CONFETTI_COLORS = ['#ffd54a', '#ff3b4e', '#5f84f0', '#ffffff', '#f0a030', '#8fe3ff'];
 
 /* ---------------------------------------------------------------------------
    2. UTILITAIRES
@@ -37,6 +44,9 @@ const PRAISE = ['Bien vu !', 'Excellent !', 'Yes !', 'Bonne pioche !', 'Incroyab
 
 /** Raccourci pour document.getElementById */
 const $ = (id) => document.getElementById(id);
+
+/** Accord simple : plural(2, 'erreur') -> "erreurs" */
+const plural = (n, word) => (n > 1 ? `${word}s` : word);
 
 /** Numéro du jour (0, 1, 2…) depuis LAUNCH_DATE, selon l'heure locale du joueur. */
 function getDayIndex(date = new Date()) {
@@ -116,6 +126,12 @@ function findMatch(puzzle, guess) {
     f.variants.some((v) => digitsOf(v) === digitsOf(g) && levenshtein(g, v) <= typoTolerance(v.length))
   );
   return close.length === 1 ? close[0].item : null;
+}
+
+/** "Tetris (EA)" -> "T _ _ _ _ _ ( _ _ )" : 1re lettre visible, les autres masquées. */
+function maskAnswer(answer) {
+  const a = String(answer).trim();
+  return a.charAt(0).toUpperCase() + a.slice(1).replace(/[\p{L}\p{N}]/gu, '_');
 }
 
 /** Temps restant avant minuit (heure locale), au format "5 h 12 min". */
@@ -201,14 +217,16 @@ const state = {
 function newGame(puzzle) {
   return {
     puzzleId: puzzle.id,
-    status: 'playing', // 'playing' | 'won' | 'lost'
-    lives: CONFIG.MAX_LIVES,
+    status: 'playing', // 'playing' | 'won' | 'lost' (= abandon)
     found: [], // rangs trouvés
-    hinted: [], // rangs pour lesquels un indice a été donné
+    hinted: [], // rangs pour lesquels un Joker a été utilisé
     log: [], // historique : { t: 'correct' | 'wrong' | 'hint', v: texte, rank }
     counted: false, // déjà pris en compte dans les stats ?
   };
 }
+
+/** Nombre d'erreurs de la partie en cours. */
+const errorCount = (game = state.game) => game.log.filter((e) => e.t === 'wrong').length;
 
 /* ---------------------------------------------------------------------------
    4. CHARGEMENT DES ÉNIGMES
@@ -242,6 +260,7 @@ function openPuzzle(puzzle, mode) {
   state.store.progress[state.key] = state.game;
   saveStore();
 
+  resetGiveUpButton();
   renderAll();
 }
 
@@ -263,7 +282,7 @@ function submitGuess(rawValue) {
   // ✅ Bonne réponse
   if (item) {
     if (game.found.includes(item.rank)) {
-      toast(`Déjà trouvé : « ${item.answer} » 😉`);
+      toast(`Déjà trouvé : « ${item.answer} »`);
       clearInput();
       return;
     }
@@ -272,62 +291,74 @@ function submitGuess(rawValue) {
     revealRow(item.rank, { animate: true });
     toast(`${PRAISE[Math.floor(Math.random() * PRAISE.length)]} N°${item.rank}`);
     clearInput();
+    renderStatus();
+    updateControls();
     if (game.found.length === puzzle.items.length) endGame('won');
     else saveStore();
-    renderStatus();
     return;
   }
 
-  // ❌ Mauvaise réponse (on ne pénalise pas deux fois la même)
+  // ❌ Mauvaise réponse (on ne compte pas deux fois la même)
   const norm = normalize(value);
-  const already = game.log.some((e) => e.t === 'wrong' && normalize(e.v) === norm);
-  if (already) {
+  if (game.log.some((e) => e.t === 'wrong' && normalize(e.v) === norm)) {
     toast('Tu as déjà proposé ça !');
     shakeInput();
     return;
   }
   game.log.push({ t: 'wrong', v: value });
-  game.lives -= 1;
+  saveStore();
   shakeInput();
+  flashWrong();
   clearInput();
-  renderLives({ breakIndex: game.lives });
   renderWrongList();
-  if (game.lives <= 0) {
-    toast('Pas dans le classement… plus de vies !');
-    endGame('lost');
-  } else {
-    toast(`Pas dans le classement ! (${game.lives} ❤️ restante${game.lives > 1 ? 's' : ''})`);
-    saveStore();
-  }
-  renderStatus();
+  renderStatus({ bump: true });
+  toast('Pas dans le classement !');
 }
 
-/** Indice : coûte 1 vie, révèle la 1re lettre + un indice de la meilleure place encore cachée. */
+/** Joker : révèle la 1re lettre + un indice de la meilleure place encore cachée. */
 function useHint() {
   const { game, puzzle } = state;
   if (game.status !== 'playing') return;
 
   const target = puzzle.items.find((it) => !game.found.includes(it.rank) && !game.hinted.includes(it.rank));
   if (!target) {
-    toast('Tous les indices sont déjà affichés !');
-    return;
-  }
-  if (game.lives <= 1) {
-    toast('Il te faut au moins 2 vies pour un indice ❤️');
+    toast('Tous les jokers sont déjà utilisés !');
     return;
   }
 
-  game.lives -= 1;
   game.hinted.push(target.rank);
   game.log.push({ t: 'hint', rank: target.rank });
   saveStore();
 
-  renderLives({ breakIndex: game.lives });
   renderHint(target.rank);
-  toast(`Indice révélé pour le n°${target.rank} 💡`);
-  renderStatus();
+  updateControls();
+  toast(`Joker pour le n°${target.rank} !`);
   // Fait défiler jusqu'à la ligne concernée (utile pour les Top 10 sur mobile)
   document.querySelector(`.row[data-rank="${target.rank}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+/** Abandon : demande une confirmation (2e appui), puis dévoile tout. */
+let giveUpTimer = null;
+function giveUp() {
+  const btn = $('btn-giveup');
+  if (state.game.status !== 'playing') return;
+
+  if (!btn.classList.contains('confirm')) {
+    btn.classList.add('confirm');
+    btn.textContent = 'Sûr ? Appuie encore';
+    clearTimeout(giveUpTimer);
+    giveUpTimer = setTimeout(resetGiveUpButton, 3500);
+    return;
+  }
+  resetGiveUpButton();
+  endGame('lost');
+}
+
+function resetGiveUpButton() {
+  clearTimeout(giveUpTimer);
+  const btn = $('btn-giveup');
+  btn.classList.remove('confirm');
+  btn.textContent = 'Abandonner';
 }
 
 /** Fin de partie : met à jour les stats (seulement pour le défi du jour) et affiche le bilan. */
@@ -353,19 +384,23 @@ function endGame(status) {
       won: status === 'won',
       found: game.found.length,
       total: puzzle.items.length,
+      errors: errorCount(game),
     });
     s.history = s.history.slice(0, 30);
     game.counted = true;
   }
   saveStore();
 
-  // En cas de défaite, on révèle les réponses manquantes une par une
-  let delay = 600;
-  if (status === 'lost') {
+  let delay = 700;
+  if (status === 'won') {
+    document.querySelector('.board-frame').classList.add('celebrate');
+    setTimeout(launchConfetti, 500);
+  } else {
+    // Abandon : on dévoile les réponses manquantes une par une
     puzzle.items
       .filter((it) => !game.found.includes(it.rank))
-      .forEach((it, i) => setTimeout(() => revealRow(it.rank, { animate: true, missed: true }), delay + i * 180));
-    delay += puzzle.items.length * 180;
+      .forEach((it, i) => setTimeout(() => revealRow(it.rank, { animate: true, missed: true }), 200 + i * 160));
+    delay += puzzle.items.length * 160;
   }
 
   updateControls();
@@ -375,30 +410,41 @@ function endGame(status) {
 /* ---------------------------------------------------------------------------
    6. AFFICHAGE
    --------------------------------------------------------------------------- */
-const HEART_SVG =
-  '<svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.9 4.5 6.6 4.1c2.1-.2 3.9.9 5.4 2.8 1.5-1.9 3.3-3 5.4-2.8 3.7.4 5.7 4.3 4.2 7.7C19.5 16.4 12 21 12 21z"/></svg>';
-
 function renderAll() {
   const { puzzle, mode } = state;
 
-  $('puzzle-badge').textContent = `${puzzle.emoji || '🏆'} Top ${puzzle.items.length} · ${puzzle.category}`;
-  $('puzzle-number').textContent = mode === 'daily' ? `#${state.dayIndex + 1}` : 'Archive';
+  $('puzzle-badge').textContent = `Top ${puzzle.items.length} · ${puzzle.category}`;
+  $('puzzle-number').textContent = mode === 'daily' ? `Émission n°${state.dayIndex + 1}` : 'Archive';
   $('puzzle-title').textContent = puzzle.title;
   $('puzzle-source').textContent = puzzle.source ? `Source : ${puzzle.source}` : '';
   $('archive-banner').hidden = mode !== 'archive';
+  document.querySelector('.board-frame').classList.toggle('celebrate', state.game.status === 'won');
 
+  renderBulbs();
   renderBoard();
-  renderLives();
   renderWrongList();
   renderStatus();
   updateControls();
 }
 
-/** Construit les N lignes du classement (faces avant cachées + faces arrière révélées). */
+function renderBulbs() {
+  const box = $('bulbs');
+  if (box.childElementCount) return;
+  for (let i = 0; i < CONFIG.BULBS; i++) {
+    const b = document.createElement('span');
+    b.className = 'bulb';
+    box.appendChild(b);
+  }
+}
+
+/** Construit les N panneaux du classement (face cachée + face révélée). */
 function renderBoard() {
   const { puzzle, game } = state;
   const board = $('board');
   board.innerHTML = '';
+  const compact = puzzle.items.length > 5;
+  board.classList.toggle('compact', compact);
+  document.body.classList.toggle('is-compact', compact);
 
   for (const item of puzzle.items) {
     const li = document.createElement('li');
@@ -406,13 +452,10 @@ function renderBoard() {
     li.dataset.rank = item.rank;
     li.innerHTML = `
       <div class="row-inner">
-        <div class="face face-front">
-          <span class="rank">${item.rank}</span>
-          <div class="mystery"><span class="mystery-dots">• • • • •</span></div>
-        </div>
+        <div class="face face-front"><span class="num-oval">${item.rank}</span></div>
         <div class="face face-back">
           <span class="rank">${item.rank}</span>
-          <span class="answer">${escapeHtml(item.answer)}</span>
+          <span class="answer"><span>${escapeHtml(item.answer)}</span></span>
           <span class="value">${escapeHtml(item.value || '')}</span>
         </div>
       </div>`;
@@ -428,7 +471,7 @@ function renderBoard() {
   updateAriaLabels();
 }
 
-/** Retourne une ligne pour afficher la réponse. */
+/** Retourne un panneau pour afficher la réponse. */
 function revealRow(rank, { animate, missed = false }) {
   const row = document.querySelector(`.row[data-rank="${rank}"]`);
   if (!row) return;
@@ -451,13 +494,18 @@ function revealRow(rank, { animate, missed = false }) {
   updateAriaLabels();
 }
 
-/** Affiche la 1re lettre et l'indice sur une ligne encore cachée. */
+/** Affiche la 1re lettre (le reste masqué) et l'indice sur un panneau encore caché. */
 function renderHint(rank) {
   const item = state.puzzle.items.find((it) => it.rank === rank);
-  const box = document.querySelector(`.row[data-rank="${rank}"] .mystery`);
-  if (!item || !box) return;
-  const firstLetter = item.answer.trim().charAt(0).toUpperCase();
-  box.innerHTML = `<span class="mystery-hint"><strong>${escapeHtml(firstLetter)}…</strong> ${escapeHtml(item.hint || '')}</span>`;
+  const row = document.querySelector(`.row[data-rank="${rank}"]`);
+  if (!item || !row) return;
+  row.classList.add('hinted');
+  row.querySelector('.face-front').innerHTML = `
+    <span class="hint-num">${item.rank}</span>
+    <span class="hint-text">
+      <span class="hint-mask">${escapeHtml(maskAnswer(item.answer))}</span>
+      <span class="hint-clue">${escapeHtml(item.hint || '')}</span>
+    </span>`;
 }
 
 function updateAriaLabels() {
@@ -468,21 +516,6 @@ function updateAriaLabels() {
       row.classList.contains('revealed') ? `N°${item.rank} : ${item.answer}, ${item.value}` : `N°${item.rank} : caché`
     );
   });
-}
-
-/** Cœurs : pleins = vies restantes. breakIndex = cœur à animer (celui qu'on vient de perdre). */
-function renderLives({ breakIndex = -1 } = {}) {
-  const box = $('lives');
-  box.innerHTML = '';
-  for (let i = 0; i < CONFIG.MAX_LIVES; i++) {
-    const wrap = document.createElement('span');
-    wrap.innerHTML = HEART_SVG;
-    const heart = wrap.firstElementChild;
-    if (i >= state.game.lives) heart.classList.add('lost');
-    if (i === breakIndex) heart.classList.add('breaking');
-    box.appendChild(heart);
-  }
-  box.setAttribute('aria-label', `${state.game.lives} vie(s) restante(s) sur ${CONFIG.MAX_LIVES}`);
 }
 
 function renderWrongList() {
@@ -498,8 +531,18 @@ function renderWrongList() {
     });
 }
 
-function renderStatus() {
-  $('progress').textContent = `${state.game.found.length} / ${state.puzzle.items.length} trouvés`;
+/** Compteur d'erreurs + score "2/5". bump = petite animation sur la croix rouge. */
+function renderStatus({ bump = false } = {}) {
+  const errors = errorCount();
+  const box = document.querySelector('.errors');
+  box.classList.toggle('has-errors', errors > 0);
+  $('errors-text').textContent = `${errors} ${plural(errors, 'erreur')}`;
+  $('score').textContent = `${state.game.found.length}/${state.puzzle.items.length}`;
+  if (bump) {
+    box.classList.remove('bump');
+    void box.offsetWidth;
+    box.classList.add('bump');
+  }
 }
 
 /** Active / désactive les boutons selon l'état de la partie. */
@@ -511,9 +554,10 @@ function updateControls() {
   $('guess-input').disabled = !playing;
   $('btn-submit').disabled = !playing;
   $('btn-hint').hidden = !playing;
-  $('btn-hint').disabled = !playing || !hintsLeft || game.lives <= 1;
+  $('btn-hint').disabled = !playing || !hintsLeft;
+  $('btn-giveup').hidden = !playing;
   $('btn-results').hidden = playing;
-  $('guess-input').placeholder = playing ? 'Propose une réponse…' : game.status === 'won' ? 'Classement complété 🎉' : 'Partie terminée';
+  $('guess-input').placeholder = playing ? 'Ta réponse…' : game.status === 'won' ? 'Classement complété !' : 'Partie terminée';
 }
 
 function clearInput() {
@@ -525,6 +569,39 @@ function shakeInput() {
   input.classList.remove('shake');
   void input.offsetWidth; // relance l'animation
   input.classList.add('shake');
+  input.addEventListener('animationend', () => input.classList.remove('shake'), { once: true });
+}
+
+/** Flash rouge sur les bords de l'écran + petite vibration (Android). */
+function flashWrong() {
+  const el = $('flash');
+  el.classList.remove('on');
+  void el.offsetWidth;
+  el.classList.add('on');
+  if (navigator.vibrate) navigator.vibrate(120);
+}
+
+/** Pluie de confettis en CSS pur (aucune bibliothèque). */
+function launchConfetti() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const layer = document.createElement('div');
+  layer.className = 'confetti-layer';
+  for (let i = 0; i < 80; i++) {
+    const c = document.createElement('span');
+    c.className = 'confetti';
+    const w = 6 + Math.random() * 6;
+    c.style.left = `${Math.random() * 100}%`;
+    c.style.width = `${w}px`;
+    c.style.height = `${w * (Math.random() > 0.5 ? 2 : 0.6)}px`;
+    c.style.background = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
+    c.style.animationDuration = `${2.2 + Math.random() * 1.8}s`;
+    c.style.animationDelay = `${Math.random() * 0.6}s`;
+    c.style.setProperty('--dx', `${(Math.random() - 0.5) * 160}px`);
+    c.style.setProperty('--rot', `${(Math.random() - 0.5) * 1440}deg`);
+    layer.appendChild(c);
+  }
+  document.body.appendChild(layer);
+  setTimeout(() => layer.remove(), 5000);
 }
 
 let toastTimer = null;
@@ -547,7 +624,7 @@ function statsHtml() {
   const pct = s.played ? Math.round((s.wins / s.played) * 100) : 0;
   const cells = [
     [s.played, 'Parties'],
-    [`${pct}%`, 'Victoires'],
+    [`${pct}%`, 'Réussies'],
     [effectiveStreak(), 'Série en cours'],
     [s.maxStreak, 'Meilleure série'],
   ];
@@ -559,14 +636,20 @@ function statsHtml() {
 function openEndModal() {
   const { game, puzzle, mode } = state;
   const won = game.status === 'won';
+  const errors = errorCount();
   const hints = game.hinted.length;
+  const perfect = won && errors === 0 && hints === 0;
 
-  $('end-emoji').textContent = won ? (game.lives === CONFIG.MAX_LIVES ? '🏆' : '🎉') : '💀';
-  $('end-title').textContent = won ? (game.lives === CONFIG.MAX_LIVES ? 'Sans faute !' : 'Bravo !') : 'Perdu…';
-  $('end-subtitle').textContent =
-    `${game.found.length}/${puzzle.items.length} trouvés` +
-    (hints ? ` · ${hints} indice${hints > 1 ? 's' : ''}` : '') +
-    ` · ${game.lives} ❤️ restante${game.lives > 1 ? 's' : ''}`;
+  $('modal-end').classList.toggle('lost', !won);
+  $('end-kicker').textContent =
+    `${mode === 'daily' ? `Émission n°${state.dayIndex + 1}` : 'Archive'} · Top ${puzzle.items.length} ${puzzle.category}`;
+  $('end-title').textContent = perfect ? 'Sans faute !' : won ? 'Bravo !' : 'Dommage !';
+
+  $('end-found').textContent = `${game.found.length}/${puzzle.items.length}`;
+  $('end-errors').textContent = errors;
+  $('end-errors-label').textContent = plural(errors, 'erreur');
+  $('end-hints').textContent = hints;
+  $('end-hints-label').textContent = plural(hints, 'joker');
   $('end-grid').textContent = emojiLine() || '—';
 
   $('end-stats').innerHTML =
@@ -579,7 +662,7 @@ function openEndModal() {
     })
     .join('');
 
-  $('end-next').textContent = mode === 'daily' ? `Prochain classement dans ${timeUntilTomorrow()} ⏳` : '';
+  $('end-next').textContent = mode === 'daily' ? `Prochaine émission dans ${timeUntilTomorrow()}` : '';
   openModal('modal-end');
 }
 
@@ -590,7 +673,7 @@ function openStatsModal() {
     ? history
         .map(
           (h) =>
-            `<li><span>${h.won ? '✅' : '❌'} #${h.day + 1} · ${escapeHtml(h.title)}</span><span>${h.found}/${h.total}</span></li>`
+            `<li><span>${h.won ? '✅' : '🏳️'} #${h.day + 1} · ${escapeHtml(h.title)}</span><span>${h.found}/${h.total}</span></li>`
         )
         .join('')
     : '<li class="empty">Aucune partie terminée pour l\'instant.</li>';
@@ -602,7 +685,7 @@ function openArchiveModal() {
   list.innerHTML = '';
   state.puzzles.forEach((p, i) => {
     const g = state.store.progress[`archive:${p.id}`];
-    const status = !g ? '🆕' : g.status === 'won' ? '✅' : g.status === 'lost' ? '❌' : '▶️';
+    const status = !g ? '🆕' : g.status === 'won' ? '✅' : g.status === 'lost' ? '🏳️' : '▶️';
     const li = document.createElement('li');
     li.innerHTML = `
       <button class="archive-item" type="button">
@@ -627,7 +710,7 @@ function openArchiveModal() {
    7. PARTAGE DU SCORE
    --------------------------------------------------------------------------- */
 
-/** Ligne d'émojis dans l'ordre des actions du joueur : 🟩 bonne réponse, 🟥 erreur, 💡 indice. */
+/** Ligne d'émojis dans l'ordre des actions du joueur : 🟩 bonne réponse, 🟥 erreur, 💡 joker. */
 function emojiLine() {
   return state.game.log.map((e) => EMOJI[e.t] || '').join('');
 }
@@ -640,13 +723,14 @@ function shareUrl() {
 function buildShareText() {
   const { game, puzzle, mode } = state;
   const won = game.status === 'won';
+  const errors = errorCount();
+  const hints = game.hinted.length;
   const head = mode === 'daily' ? `${CONFIG.GAME_NAME} #${state.dayIndex + 1}` : `${CONFIG.GAME_NAME} (archive)`;
-  const hearts = '❤️'.repeat(game.lives) + '🖤'.repeat(CONFIG.MAX_LIVES - game.lives);
   return [
-    `${head} ${won ? '🏆' : '💀'} ${game.found.length}/${puzzle.items.length}`,
+    `${head} ${won ? '🏆' : '🏳️'} ${game.found.length}/${puzzle.items.length}`,
     `${puzzle.emoji || '🏆'} Top ${puzzle.items.length} · ${puzzle.category}`,
     emojiLine(),
-    hearts,
+    `❌ ${errors} ${plural(errors, 'erreur')} · 💡 ${hints} ${plural(hints, 'joker')}`,
     shareUrl(),
   ]
     .filter(Boolean)
@@ -680,7 +764,7 @@ async function copyToClipboard(text) {
 async function shareScore() {
   const text = buildShareText();
   const ok = await copyToClipboard(text);
-  toast(ok ? 'Score copié ! Colle-le où tu veux 📋' : 'Copie impossible sur ce navigateur 😕', 2400);
+  toast(ok ? 'Score copié ! Colle-le où tu veux' : 'Copie impossible sur ce navigateur', 2400);
   if (!ok) console.log(text);
 }
 
@@ -693,6 +777,7 @@ function bindEvents() {
     submitGuess($('guess-input').value);
   });
   $('btn-hint').addEventListener('click', useHint);
+  $('btn-giveup').addEventListener('click', giveUp);
   $('btn-results').addEventListener('click', openEndModal);
   $('btn-share').addEventListener('click', shareScore);
   $('btn-help').addEventListener('click', () => openModal('modal-help'));
@@ -730,9 +815,7 @@ function showLoadError(err) {
        et ouvre <code>http://localhost:8000</code>. (Détails dans le README.)`
     : `<strong>Impossible de charger les énigmes.</strong> Vérifie que <code>puzzles.json</code> est présent et valide.<br/><small>${escapeHtml(err.message)}</small>`;
   $('puzzle-title').textContent = 'Oups…';
-  $('guess-input').disabled = true;
-  $('btn-submit').disabled = true;
-  $('btn-hint').disabled = true;
+  ['guess-input', 'btn-submit', 'btn-hint', 'btn-giveup'].forEach((id) => ($(id).disabled = true));
 }
 
 async function init() {
