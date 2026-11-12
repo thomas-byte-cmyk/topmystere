@@ -203,7 +203,9 @@
           "aliases": [
             "Cruyff",
             "Cruijff",
-            "Johan Cruijff", "Cruif", "Cruyf"
+            "Johan Cruijff",
+            "Cruif",
+            "Cruyf"
           ],
           "value": "3 (ex æquo)",
           "hint": "Légende néerlandaise de l'Ajax et du Barça, années 70."
@@ -228,6 +230,72 @@
           ],
           "value": "3 (ex æquo)",
           "hint": "Buteur néerlandais du grand Milan AC (1988-1992)."
+        }
+      ]
+    },
+    {
+      "id": "mickey-personnalites-2026-top5",
+      "category": "Célébrités",
+      "emoji": "⭐",
+      "title": "Les personnalités préférées des 7-14 ans en 2026, selon le Journal de Mickey",
+      "source": "Journal de Mickey / OpinionWay (mars 2026, 618 enfants)",
+      "items": [
+        {
+          "rank": 1,
+          "answer": "Soprano",
+          "aliases": [
+            "Sopra",
+            "Saïd M'Roumbaba"
+          ],
+          "value": "1er · 6e victoire",
+          "hint": "Rappeur marseillais, coach de The Voice Kids."
+        },
+        {
+          "rank": 2,
+          "answer": "Victor Wembanyama",
+          "aliases": [
+            "Wembanyama",
+            "Wemby",
+            "Victor",
+            "Wembi"
+          ],
+          "value": "2e",
+          "hint": "Basketteur français de 2,24 m, star des San Antonio Spurs."
+        },
+        {
+          "rank": 3,
+          "answer": "Olivier Giroud",
+          "aliases": [
+            "Giroud",
+            "Olivier"
+          ],
+          "value": "3e",
+          "hint": "Attaquant champion du monde 2018, revenu jouer en France à Lille en 2025."
+        },
+        {
+          "rank": 4,
+          "answer": "Inoxtag",
+          "aliases": [
+            "Inox",
+            "Inès Benazzouz"
+          ],
+          "value": "4e",
+          "hint": "Youtubeur qui a gravi l'Everest pour son film « Kaizen »."
+        },
+        {
+          "rank": 5,
+          "answer": "Ousmane Dembélé / Léon Marchand",
+          "aliases": [
+            "Dembélé",
+            "Dembele",
+            "Ousmane Dembélé",
+            "Ousmane",
+            "Léon Marchand",
+            "Marchand",
+            "Léon"
+          ],
+          "value": "5e ex æquo",
+          "hint": "Deux réponses acceptées : le Ballon d'or 2025… ou le nageur aux 4 médailles d'or à Paris."
         }
       ]
     },
@@ -963,77 +1031,6 @@
       ]
     },
     {
-      "id": "harry-potter-films-top5",
-      "category": "Cinéma",
-      "emoji": "⚡",
-      "title": "Les 5 premiers films Harry Potter, dans l'ordre de sortie",
-      "source": "Warner Bros.",
-      "items": [
-        {
-          "rank": 1,
-          "answer": "Harry Potter à l'école des sorciers",
-          "aliases": [
-            "L'école des sorciers",
-            "Harry Potter 1",
-            "Philosopher's Stone",
-            "Sorcerer's Stone",
-            "Harry Potter and the Philosopher's Stone"
-          ],
-          "value": "2001",
-          "hint": "Harry découvre qu'il est un sorcier."
-        },
-        {
-          "rank": 2,
-          "answer": "Harry Potter et la Chambre des secrets",
-          "aliases": [
-            "La Chambre des secrets",
-            "Chambre des secrets",
-            "Harry Potter 2",
-            "Chamber of Secrets"
-          ],
-          "value": "2002",
-          "hint": "Un basilic, Dobby et une voiture volante."
-        },
-        {
-          "rank": 3,
-          "answer": "Harry Potter et le Prisonnier d'Azkaban",
-          "aliases": [
-            "Le Prisonnier d'Azkaban",
-            "Prisonnier d'Azkaban",
-            "Azkaban",
-            "Harry Potter 3",
-            "Prisoner of Azkaban"
-          ],
-          "value": "2004",
-          "hint": "Sirius Black s'évade, et un retourneur de temps."
-        },
-        {
-          "rank": 4,
-          "answer": "Harry Potter et la Coupe de feu",
-          "aliases": [
-            "La Coupe de feu",
-            "Coupe de feu",
-            "Harry Potter 4",
-            "Goblet of Fire"
-          ],
-          "value": "2005",
-          "hint": "Le Tournoi des Trois Sorciers."
-        },
-        {
-          "rank": 5,
-          "answer": "Harry Potter et l'Ordre du Phénix",
-          "aliases": [
-            "L'Ordre du Phénix",
-            "Ordre du Phénix",
-            "Harry Potter 5",
-            "Order of the Phoenix"
-          ],
-          "value": "2007",
-          "hint": "Ombrage débarque à Poudlard."
-        }
-      ]
-    },
-    {
       "id": "jo-hiver-villes-top5",
       "category": "Sport",
       "emoji": "⛷️",
@@ -1285,102 +1282,6 @@
           ],
           "value": "Médecin",
           "hint": "Un renne qui a mangé un fruit du démon."
-        }
-      ]
-    },
-    {
-      "id": "spiderman-acteurs-top3",
-      "category": "Cinéma",
-      "emoji": "🕷️",
-      "title": "Les 3 acteurs qui ont porté le costume de Spider-Man au cinéma depuis 2002, dans l'ordre",
-      "source": "Sony / Marvel Studios",
-      "items": [
-        {
-          "rank": 1,
-          "answer": "Tobey Maguire",
-          "aliases": [
-            "Maguire",
-            "Tobey"
-          ],
-          "value": "2002",
-          "hint": "La trilogie de Sam Raimi."
-        },
-        {
-          "rank": 2,
-          "answer": "Andrew Garfield",
-          "aliases": [
-            "Garfield",
-            "Andrew"
-          ],
-          "value": "2012",
-          "hint": "The Amazing Spider-Man."
-        },
-        {
-          "rank": 3,
-          "answer": "Tom Holland",
-          "aliases": [
-            "Holland",
-            "Tom"
-          ],
-          "value": "2016",
-          "hint": "Il apparaît pour la 1re fois dans Captain America: Civil War."
-        }
-      ]
-    },
-    {
-      "id": "iphone-top5",
-      "category": "Tech",
-      "emoji": "📱",
-      "title": "Les 5 premiers iPhone, dans l'ordre de sortie",
-      "source": "Apple",
-      "items": [
-        {
-          "rank": 1,
-          "answer": "iPhone",
-          "aliases": [
-            "iPhone 1",
-            "iPhone 2G",
-            "Premier iPhone",
-            "iPhone original"
-          ],
-          "value": "2007",
-          "hint": "Le tout premier, présenté par Steve Jobs."
-        },
-        {
-          "rank": 2,
-          "answer": "iPhone 3G",
-          "aliases": [
-            "3G"
-          ],
-          "value": "2008",
-          "hint": "Il tire son nom du réseau mobile qu'il gère enfin."
-        },
-        {
-          "rank": 3,
-          "answer": "iPhone 3GS",
-          "aliases": [
-            "3GS"
-          ],
-          "value": "2009",
-          "hint": "Le même nom que le précédent… avec un S pour « speed »."
-        },
-        {
-          "rank": 4,
-          "answer": "iPhone 4",
-          "aliases": [
-            "4"
-          ],
-          "value": "2010",
-          "hint": "Design en verre et acier, et FaceTime."
-        },
-        {
-          "rank": 5,
-          "answer": "iPhone 4S",
-          "aliases": [
-            "4S"
-          ],
-          "value": "2011",
-          "hint": "Le premier avec Siri."
         }
       ]
     },
