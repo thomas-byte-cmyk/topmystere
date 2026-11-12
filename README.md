@@ -51,6 +51,11 @@ Autre solution : l'extension **Live Server** de VS Code (clic droit sur `index.h
 - `TopMystere.resetAll()` efface toute la sauvegarde et recharge la page.
 - Pour simuler un autre jour, modifie `LAUNCH_DATE` en haut de `app.js`.
 
+## Après une modification de `style.css` ou `app.js`
+
+Dans `index.html`, augmente le numéro de version (`style.css?v=3` → `?v=4`, idem pour `app.js`).
+Sinon, les navigateurs de tes joueurs peuvent garder l'ancienne version en mémoire.
+
 ## Ajouter ou modifier une énigme
 
 Dans `puzzles.json`, ajoute un objet dans la liste `puzzles` :
