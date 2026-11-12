@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
   <!-- ========== EN-TÊTE ========== -->
@@ -57,28 +57,25 @@
         <span id="puzzle-number" class="puzzle-number"></span>
       </div>
       <h2 id="puzzle-title" class="puzzle-title">Chargement du classement…</h2>
-      <p id="puzzle-source" class="puzzle-source"></p>
     </section>
 
-    <!-- Le plateau : cadre doré + ampoules + lignes du classement (générées par app.js) -->
+    <!-- Le plateau : cadre doré + tableau de score (erreurs, ampoules, trouvés) + lignes du classement -->
     <div class="board-frame">
       <div class="board-inner">
-        <div id="bulbs" class="bulbs" aria-hidden="true"></div>
+        <div class="board-top">
+          <div id="errors" class="errors" aria-live="polite" aria-label="0 erreur">
+            <span class="x-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" /></svg>
+            </span>
+            <span id="errors-count" class="errors-count" aria-hidden="true">0</span>
+          </div>
+          <div id="bulbs" class="bulbs" aria-hidden="true"></div>
+          <div class="score">
+            <span id="score" class="score-value">0/0</span>
+            <span class="score-label">trouvés</span>
+          </div>
+        </div>
         <ol id="board" class="board"></ol>
-      </div>
-    </div>
-
-    <!-- Compteur d'erreurs + score -->
-    <div class="status-bar">
-      <div class="errors" aria-live="polite">
-        <span class="x-box" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" /></svg>
-        </span>
-        <span id="errors-text" class="errors-text">0 erreur</span>
-      </div>
-      <div class="score">
-        <span id="score" class="score-value">0/0</span>
-        <span class="score-label">trouvés</span>
       </div>
     </div>
 
@@ -103,10 +100,10 @@
       <button id="btn-giveup" class="btn btn-giveup" type="button">Abandonner</button>
       <button id="btn-results" class="btn btn-gold" type="button" hidden>Voir mon résultat</button>
     </div>
-  </footer>
 
-  <!-- Notifications courtes -->
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <!-- Notifications courtes (juste au-dessus du champ de saisie) -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </footer>
   <!-- Flash rouge lors d'une erreur -->
   <div id="flash" class="flash" aria-hidden="true"></div>
 
@@ -146,6 +143,7 @@
       <h4 class="section-title">Le classement complet</h4>
       <ol id="end-ranking" class="end-ranking"></ol>
 
+      <p id="end-source" class="end-source"></p>
       <p id="end-next" class="end-next"></p>
     </div>
   </dialog>
@@ -189,6 +187,6 @@
     </div>
   </dialog>
 
-  <script src="app.js?v=3" defer></script>
+  <script src="app.js?v=4" defer></script>
 </body>
 </html>

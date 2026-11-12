@@ -31,7 +31,7 @@ const CONFIG = {
   // Lien ajouté au message de partage. Laisser vide = adresse actuelle de la page.
   SHARE_URL: '',
   // Nombre d'ampoules en haut du plateau
-  BULBS: 16,
+  BULBS: 7,
 };
 
 const EMOJI = { correct: '🟩', wrong: '🟥', hint: '💡' };
@@ -416,7 +416,6 @@ function renderAll() {
   $('puzzle-badge').textContent = `Top ${puzzle.items.length} · ${puzzle.category}`;
   $('puzzle-number').textContent = mode === 'daily' ? `Émission n°${state.dayIndex + 1}` : 'Archive';
   $('puzzle-title').textContent = puzzle.title;
-  $('puzzle-source').textContent = puzzle.source ? `Source : ${puzzle.source}` : '';
   $('archive-banner').hidden = mode !== 'archive';
   document.querySelector('.board-frame').classList.toggle('celebrate', state.game.status === 'won');
 
@@ -534,9 +533,10 @@ function renderWrongList() {
 /** Compteur d'erreurs + score "2/5". bump = petite animation sur la croix rouge. */
 function renderStatus({ bump = false } = {}) {
   const errors = errorCount();
-  const box = document.querySelector('.errors');
+  const box = $('errors');
   box.classList.toggle('has-errors', errors > 0);
-  $('errors-text').textContent = `${errors} ${plural(errors, 'erreur')}`;
+  $('errors-count').textContent = errors;
+  box.setAttribute('aria-label', `${errors} ${plural(errors, 'erreur')}`);
   $('score').textContent = `${state.game.found.length}/${state.puzzle.items.length}`;
   if (bump) {
     box.classList.remove('bump');
@@ -662,6 +662,7 @@ function openEndModal() {
     })
     .join('');
 
+  $('end-source').textContent = puzzle.source ? `Source : ${puzzle.source}` : '';
   $('end-next').textContent = mode === 'daily' ? `Prochaine émission dans ${timeUntilTomorrow()}` : '';
   openModal('modal-end');
 }
