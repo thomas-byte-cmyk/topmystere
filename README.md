@@ -91,6 +91,27 @@ Une fois le code sur GitHub :
 
 Chaque nouvelle modification envoyée sur `main` met le site à jour automatiquement.
 
+## Mesure d'audience (GoatCounter)
+
+Le jeu compte ses visiteurs avec [GoatCounter](https://www.goatcounter.com) : gratuit, **sans cookies** et sans données personnelles, donc pas besoin de bandeau de consentement.
+
+**Mise en route (une seule fois)** :
+1. Crée un compte sur https://www.goatcounter.com/signup.
+2. Dans **Code**, tape `topmystere` (ton tableau de bord sera https://topmystere.goatcounter.com).
+3. Si ce code est déjà pris, choisis-en un autre et remplace `GOATCOUNTER_CODE` en haut de `app.js`.
+
+**Ce qui est mesuré** :
+- chaque visite de la page (page `/`) ;
+- des événements de jeu, de la forme `jour/<événement>/<id de l'énigme>` (ou `archive/…` pour les archives) :
+  - `debut` : première proposition de la partie ;
+  - `victoire` / `abandon` : fin de partie ;
+  - `joker` : premier joker utilisé dans la partie ;
+  - `partage` : clic sur « Partager mon score ».
+
+Exemple : `debut` vs `victoire` sur une énigme donne son taux de réussite.
+
+Les visites depuis `localhost` (tests sur ton ordinateur) ne sont pas comptées. Pour désactiver la mesure : `GOATCOUNTER_CODE: ''`.
+
 ## Pistes pour la suite
 
 - Ajouter des énigmes (une par jour = 365 pour un an).

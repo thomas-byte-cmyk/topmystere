@@ -32,6 +32,9 @@ const CONFIG = {
   SHARE_URL: '',
   // Nombre d'ampoules en haut du plateau
   BULBS: 7,
+  // Mesure d'audience GoatCounter (sans cookies) : le code choisi à l'inscription
+  // sur goatcounter.com (https://CODE.goatcounter.com). Laisser vide = désactivé.
+  GOATCOUNTER_CODE: 'topmystere',
 };
 
 const EMOJI = { correct: '🟩', wrong: '🟥', hint: '💡' };
@@ -41,6 +44,35 @@ const CONFETTI_COLORS = ['#ffd54a', '#ff3b4e', '#5f84f0', '#ffffff', '#f0a030', 
 /* ---------------------------------------------------------------------------
    2. UTILITAIRES
    --------------------------------------------------------------------------- */
+
+/**
+ * Mesure d'audience GoatCounter : charge le script de comptage (1 visite = 1 page vue).
+ * Aucun cookie, aucune donnée personnelle. Les visites depuis localhost sont ignorées.
+ */
+function loadAnalytics() {
+  if (!CONFIG.GOATCOUNTER_CODE) return;
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://gc.zgo.at/count.js';
+  script.dataset.goatcounter = `https://${CONFIG.GOATCOUNTER_CODE}.goatcounter.com/count`;
+  document.head.appendChild(script);
+}
+
+/**
+ * Enregistre un « événement » GoatCounter (ex. "fin/victoire/top-jeux-video").
+ * Visible dans le tableau de bord GoatCounter, mélangé aux pages, avec le même nom.
+ * Ne fait rien si le script n'est pas chargé (bloqueur de pub, pas de réseau…).
+ */
+function track(name) {
+  try {
+    window.goatcounter?.count?.({ path: name, title: name, event: true });
+  } catch {
+    /* la mesure d'audience ne doit jamais casser le jeu */
+  }
+}
+
+/** Préfixe des événements : "jour" pour le défi du jour, "archive" sinon. */
+const trackPrefix = () => (state.mode === 'daily' ? 'jour' : 'archive');
 
 /** Raccourci pour document.getElementById */
 const $ = (id) => document.getElementById(id);
@@ -278,6 +310,7 @@ function submitGuess(rawValue) {
   }
 
   const item = findMatch(puzzle, value);
+  if (game.log.length === 0) track(`${trackPrefix()}/debut/${puzzle.id}`);
 
   // ✅ Bonne réponse
   if (item) {
@@ -326,6 +359,7 @@ function useHint() {
     return;
   }
 
+  if (game.hinted.length === 0) track(`${trackPrefix()}/joker/${puzzle.id}`);
   game.hinted.push(target.rank);
   game.log.push({ t: 'hint', rank: target.rank });
   saveStore();
@@ -365,6 +399,7 @@ function resetGiveUpButton() {
 function endGame(status) {
   const { game, puzzle } = state;
   game.status = status;
+  track(`${trackPrefix()}/${status === 'won' ? 'victoire' : 'abandon'}/${puzzle.id}`);
 
   if (state.mode === 'daily' && !game.counted) {
     const s = state.store.stats;
@@ -765,6 +800,7 @@ async function copyToClipboard(text) {
 async function shareScore() {
   const text = buildShareText();
   const ok = await copyToClipboard(text);
+  track(`${trackPrefix()}/partage/${state.puzzle.id}`);
   toast(ok ? 'Score copié ! Colle-le où tu veux' : 'Copie impossible sur ce navigateur', 2400);
   if (!ok) console.log(text);
 }
@@ -820,6 +856,7 @@ function showLoadError(err) {
 }
 
 async function init() {
+  loadAnalytics();
   state.store = loadStore();
   state.dayIndex = getDayIndex();
   bindEvents();
